@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head></head>
+<body>
+<div class="hideDiv">
+    <input type="hidden" id="method" value="common/makeImage" />
+    <input type="hidden" id="formName" value="dataForm" />
+</div>
+
+<section class="wrapper_top">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon-copy"></i> 批量捞取指纹图片</a>
+                </li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+</section>
+
+<section class="wrapper site-min-height">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="result" class="alert alert-block fade in hideDiv">
+                <button data-dismiss="alert" class="close close-sm" type="button">
+                    <i class="icon-remove"></i>
+                </button>
+                <h4><i id="result_sign"></i><span id="result_title"></span></h4>
+                <p id="result_msg"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading panel-bg-orgin">
+                    <i class="icon-book"></i>批量捞取指纹图片
+                </header>
+                <div class="panel-body">
+                    <div class=" form">
+                        <form class="cmxform form-horizontal tasi-form" id="dataForm" name="dataForm" novalidate="novalidate">
+                            <!--<div class="form-group ">
+                                <label for="imagePrefix" class="control-label col-lg-1"><span
+                                        class="form-req">*</span>命名前缀 ：</label>
+                                <div class="col-lg-4">
+                                    <input class="form-control" id="imagePrefix" name="imagePrefix" minlength="3" type="text"  required="" readonly>
+                                    <span class="help-block">输入图片命名前缀</span>
+                                </div>
+                            </div>-->
+                            <div class="form-group ">
+                                <label for="querySql" class="control-label col-lg-1"><span
+                                        class="form-req">*</span>执行SQL ：</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" id="querySql" name="querySql" maxlength="250" type="text"  required="" value="select rownum id,tczp zp0,cszp zp1 from TC_CS_BMP_2000" />
+                                    <span class="help-block">用于在指定库中执行指纹图片捞取的SQL语句,此处库表字段不强制，如果存在几列图片数据，则写多个zp，最多支持7列图，但SQL语句格式规定为：select rownum id,xxx csid,xxx zp0，xxx zp1 from xxx,其中csid可以不写</span>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="imageTypes" class="control-label col-lg-1"><span class="form-req">*</span>图片类型:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" id="imageTypes" name="imageTypes" maxlength="80" type="text"  required="" value="wsq,bmp" />
+                                    <span class="help-block">指定捞取到的指纹图片的存储格式，捞图SQL中有几列图片数据，则需要指定几个图片格式，多个图片格式以逗号分隔符隔开，例如 wsq,bmp</span>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label col-lg-1"><span class="form-req">*</span>存储路径:</label>
+                                <div class="col-lg-4">
+                                    <input type="text" id="filePath" name="filePath" class="form-control" maxlength="50" value="C:/make/imgfile" required="" />
+                                    <span class="help-block text-danger">注意：该路径必须是指纹图片在测试平台服务器的本地目录</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-1 col-lg-12">
+                                    <button class="btn btn-danger btn-form" type="button" id="button_submit">
+                                        <i class="icon-ok-sign"></i> 提交
+                                    </button>
+                                    <button class="btn btn-default btn-form" type="button" id="button_reset">
+                                        <i class="icon-refresh"></i> 重置
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/common/ui.js"></script>
+</body>
+</html>

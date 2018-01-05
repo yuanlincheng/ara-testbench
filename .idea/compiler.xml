@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ara-testbench-application" />
+        <module name="ara-testbench-dao" />
+        <module name="ara-testbench-domain" />
+        <module name="ara-testbench-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="ara-testbench" target="1.8" />
+      <module name="ara-testbench-application" target="1.8" />
+      <module name="ara-testbench-dao" target="1.8" />
+      <module name="ara-testbench-domain" target="1.8" />
+      <module name="ara-testbench-library" target="1.8" />
+      <module name="ara-testbench-model" target="1.8" />
+      <module name="ara-testbench-service" target="1.8" />
+      <module name="ara-testbench-web" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

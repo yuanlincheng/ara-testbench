@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="#{main.system.title}">功能展示平台</title>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <!--external css-->
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" />
+    <link href="assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link href="assets/bootstrap-daterangepicker/css/daterangepicker.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/other/html5shiv.js"></script>
+    <script src="js/other/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="has-js">
+<section id="container" >
+    <!--header start-->
+    <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <!--<div th:attr=" data-original-title=#{main.system.banner}" data-original-title="显示/隐藏 导航栏" data-placement="right" class="icon-reorder tooltips"></div>-->
+            <div th:attr=" data-original-title=#{main.system.banner}" data-placement="right" class="icon-reorder tooltips"></div>
+        </div>
+        <!--logo start-->
+        <a href="javascript:void(0)" class="logo"><span th:text="#{main.system.title}">功能展示平台</span></a>
+        <!--logo end-->
+
+        <div class="top-nav">
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/avatar-mini.jpg" />
+                        <span class="username" th:text="#{main.system.operator}">演示人员</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <div class="log-arrow-up"></div>
+                    </ul>
+                </li>
+                <!-- user login dropdown end -->
+            </ul>
+            <!--search & user info end-->
+        </div>
+    </header>
+    <!--header end-->
+
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar"  class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a class="active" href="javascript:void(0)">
+                        <i class="icon-dashboard"></i>
+                        <span th:text="#{main.index}">首页</span>
+                    </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="active">
+                        <i class="icon-hand-right"></i> <span th:text="#{main.service.wjb}">TrustAfis-WJB 服务</span>
+                    </a>
+                    <ul class="sub" style="display: block;">
+                        <li >
+                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toLoginService','');">
+                                <i class="icon-user"></i>
+                                <span th:text="#{main.service.login}">指纹服务登录</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-cloud-upload"></i>
+                                <span th:text="#{main.service.enroll}">指纹注册</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toEnroll','')">
+                                        <i class="icon-cloud-upload"></i>
+                                        <span th:text="#{main.service.enroll.encrypt}">报文加密项目</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-globe"></i>
+                                <span th:text="#{main.service.verify}">指纹比对</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toVerifyFingerId','')">
+                                        <i class="icon-globe"></i>
+                                        <span>指纹采集编号比对</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toGetResult','')">
+                                <i class="icon-file-text"></i>
+                                <span>指纹注册结果获取</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-pencil"></i>
+                                <span>数据变更</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toUpdatePerson','')">
+                                        <i class="icon-pencil"></i>
+                                        <span>签证人员信息变更</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-trash"></i>
+                                <span>数据注销</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDeleteFinger','')">
+                                        <i class="icon-trash"></i>
+                                        <span>指纹采集编号注销</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDeletePerson','');">
+                                        <i class="icon-trash"></i>
+                                        <span>护照号加国籍注销</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-cloud-download"></i>
+                                <span>数据导出</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toExportFpPackage','')">
+                                        <i class="icon-cloud-download"></i>
+                                        <span>指纹图像报文导出</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="icon-hand-right"></i> <span>TrustAfis-WJB 其它</span>
+                    </a>
+                    <ul class="sub" style="display: block;">
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-globe"></i>
+                                <span>指纹比对</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toVerifyImage','')">
+                                        <i class="icon-globe"></i>
+                                        <span>指纹图片比对</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toVerify','')">
+                                        <i class="icon-globe"></i>
+                                        <span>采集指纹查重</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toVerifySameEid','')">
+                                        <i class="icon-globe"></i>
+                                        <span>同护照指纹比对</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toVerifyDifEid','')">
+                                        <i class="icon-globe"></i>
+                                        <span>不同护照指纹比对</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-cloud-download"></i>
+                                <span>数据导出</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toExportFpImage','')">
+                                        <i class="icon-cloud-download"></i>
+                                        <span>指纹图片导出</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-key"></i>
+                                <span>数据加解密</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDecFpImages','')">
+                                        <i class="icon-key"></i>
+                                        <span>指纹图像批量解密</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toReadPubkeyFile','')">
+                                        <i class="icon-key"></i>
+                                        <span>公钥文件读取</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-cog"></i>
+                                <span>其它</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toEncPackage','')">
+                                        <i class="icon-cog"></i>
+                                        <span>十指报文加密</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDecPackage','')">
+                                        <i class="icon-cog"></i>
+                                        <span>十指报文解密</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDecExportPackage','')">
+                                        <i class="icon-cog"></i>
+                                        <span>导出报文解密</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)">
+                                        <i class="icon-cog"></i>
+                                        <span>指纹报文模拟注册</span>
+                                    </a>
+                                    <ul class="sub" style="display: block;">
+                                        <li >
+                                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toBatchEnroll','')">
+                                                <i class="icon-cog"></i>
+                                                <span>批量文件</span>
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toOneFileEnroll','');">
+                                                <i class="icon-cog"></i>
+                                                <span>单个文件</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toGetKeyValue','')">
+                                        <i class="icon-cog"></i>
+                                        <span>BASE64密钥获取</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="javascript:void(0)">
+                                        <i class="icon-cog"></i>
+                                        <span>错误处理</span>
+                                    </a>
+                                    <ul class="sub" style="display: block;">
+                                        <li >
+                                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toDecPackageError','')">
+                                                <i class="icon-cog"></i>
+                                                <span>注册修正</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="icon-hand-right"></i> <span>TrustAfis-AGL 服务</span>
+                    </a>
+                    <ul class="sub" style="display: block;">
+                        <li >
+                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toLoginService','');">
+                                <i class="icon-user"></i>
+                                <span>指纹服务登录</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-cloud-upload"></i>
+                                <span>指纹注册</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','aglAfis/toEnrollAgl','');">
+                                        <i class="icon-cloud-upload"></i>
+                                        <span>报文不加密项目</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)" onclick="loadPage('main-content','trustafis/toGetResult','')">
+                                <i class="icon-file-text"></i>
+                                <span>指纹注册结果获取</span>
+                            </a>
+                        </li>
+                        <li >
+                            <a href="javascript:void(0)">
+                                <i class="icon-trash"></i>
+                                <span>数据注销</span>
+                            </a>
+                            <ul class="sub" style="display: block;">
+                                <li >
+                                    <a href="javascript:void(0)" onclick="loadPage('main-content','aglAfis/toDeletePerson','');">
+                                        <i class="icon-trash"></i>
+                                        <span>证件号注销</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="icon-hand-right"></i> <span>通用服务</span>
+                    </a>
+                    <ul class="sub" style="display: block;">
+                        <li >
+                            <a href="javascript:void(0)" onclick="loadPage('main-content','common/toMakeImage','');">
+                                <i class="icon-copy"></i>
+                                <span>批量指纹图片捞取</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content"> </section>
+    <!--main content end-->
+</section>
+<!-- Modal -->
+<section >
+    <div class="modal fade" id="id_sys_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="id_loading">
+            <div class="preloader">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- modal -->
+
+<!--footer start-->
+<footer class="site-footer">
+    <div class="text-center">
+        Copyright &copy; 2016. All Rights Reserved.
+        <a href="#" class="go-top">
+            <i class="icon-angle-up"></i>
+        </a>
+    </div>
+</footer>
+<!--footer end-->
+
+ <!--js placed at the end of the document so the pages load faster-->
+<script src="js/jquery/jquery.js"></script>
+<script src="js/vue/vue.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/bootstrap/bootstrap-switch.js"></script>
+<script class="include" type="text/javascript" src="js/jquery/jquery.dcjqaccordion.2.7.min.js"></script>
+<script src="js/jquery/jquery.scrollTo.min.js"></script>
+<script src="js/jquery/jquery.cookie.js"></script>
+<script src="js/jquery/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="js/jquery/jquery.sparkline.js" type="text/javascript"></script>
+<script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+<script src="assets/advanced-datatable/js/jquery.dataTables.js"></script>
+<script src="js/other/owl.carousel.js" ></script>
+<script src="js/jquery/jquery.customSelect.min.js" ></script>
+<script type="text/javascript" src="js/jquery/validate/jquery.validate.min.js" ></script>
+<script type="text/javascript" src="js/jquery/validate/additional-methods.js" ></script>
+<script type="text/javascript" src="js/jquery/validate/messages_zh.min.js" ></script>
+<script src="assets/bootstrap-daterangepicker/js/moment.min.js"></script>
+<script src="assets/bootstrap-daterangepicker/js/daterangepicker.js"></script>
+
+<!--common script for all pages-->
+<script src="js/common/common.js"></script>
+<script src="js/common/operator.js"></script>
+
+<!--script for this page-->
+<script src="js/other/easy-pie-chart.js"></script>
+<script for="FINGERCtrl" event="OnGotPackData()" language="javascript">OnGotPackData();</script>
+<script type="text/javascript">
+    //定义一个组件，名称为result-div ，表示异步结果信息
+    Vue.component("result-div", {
+        template: "<div class='row'><div class='col-lg-12'><div id='result' class='alert alert-block fade in hideDiv'> <button data-dismiss='alert' class='close close-sm' type='button'> <i class='icon-remove'></i> </button> <h4><i id='result_sign'></i><span id='result_title'></span></h4> <p id='result_msg'></p> </div> </div> </div>",
+    });
+</script>
+</body>
+</html>

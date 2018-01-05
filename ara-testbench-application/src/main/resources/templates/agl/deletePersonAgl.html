@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="hideDiv">
+    <input type="hidden" id="action" value="operationAction" />
+    <input type="hidden" id="method" value="aglAfis/deletePerson" />
+    <input type="hidden" id="formName" value="dataForm" />
+</div>
+
+<section class="wrapper_top">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon-trash"></i> 证件号注销【AGL】</a>
+                </li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+</section>
+
+<section class="wrapper site-min-height">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="result" class="alert alert-block fade in hideDiv">
+                <button data-dismiss="alert" class="close close-sm" type="button">
+                    <i class="icon-book"></i>
+                </button>
+                <h4><i id="result_sign"></i><span id="result_title"></span></h4>
+                <p id="result_msg"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading panel-bg-orgin">
+                    <i class="icon-foursquare"></i>证件号注销【AGL】
+                </header>
+                <div class="panel-body">
+                    <div class=" form">
+                        <form class="cmxform form-horizontal tasi-form" id="dataForm" name="dataForm" novalidate="novalidate">
+                            <div class="form-group ">
+                                <label for="eid" class="control-label col-lg-1"><span
+                                        class="form-req">*</span>证件号码 ：</label>
+                                <div class="col-lg-4">
+                                    <input class="form-control" id="eid" name="eid" type="text" value="" placeholder="对应被采集指纹人的证件号">
+                                    <span class="help-block">指纹注册所使用的证件号码</span>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="sessionId" class="control-label col-lg-1"><span
+                                        class="form-req">*</span>交互令牌 ：</label>
+                                <div class="col-lg-4">
+                                    <input class="form-control" id="sessionId" name="sessionId"
+                                           minlength="3" type="text" value="${TAS_SESSIONID}" required=""> <span
+                                        class="help-block">自动预置最近一次获取的交互令牌</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-1 col-lg-12">
+                                    <button class="btn btn-danger btn-form" type="button" id="button_submit">
+                                        <i class="icon-ok-sign"></i> 提交
+                                    </button>
+                                    <button class="btn btn-default btn-form" type="button" id="button_reset">
+                                        <i class="icon-refresh"></i> 重置
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/common/ui.js"></script>
+</body>
+</html>

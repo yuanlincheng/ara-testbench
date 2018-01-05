@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ara-testbench.iml" filepath="$PROJECT_DIR$/ara-testbench.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ara-testbench-application/ara-testbench-application.iml" filepath="$PROJECT_DIR$/ara-testbench-application/ara-testbench-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ara-testbench-dao/ara-testbench-dao.iml" filepath="$PROJECT_DIR$/ara-testbench-dao/ara-testbench-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ara-testbench-domain/ara-testbench-domain.iml" filepath="$PROJECT_DIR$/ara-testbench-domain/ara-testbench-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ara-testbench-service/ara-testbench-service.iml" filepath="$PROJECT_DIR$/ara-testbench-service/ara-testbench-service.iml" />
+    </modules>
+  </component>
+</project>

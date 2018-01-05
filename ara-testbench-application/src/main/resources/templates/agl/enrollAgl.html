@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="hideDiv">
+    <input type="hidden" id="action" value="operationAction"/>
+    <input type="hidden" id="method" value="trustafis/enroll"/>
+    <input type="hidden" id="formName" value="enroll"/>
+</div>
+
+<section class="wrapper_top">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb">
+                <li><a href="#"><i class="icon-cloud-upload"></i> 十指指纹注册【不加密】</a></li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <object id='FINGERCtrl' name='FINGERCtrl' width="0" height="0"
+                classid="CLSID:55D460ED-1AA6-4A96-A49E-EC97C596D1CB"></object>
+    </div>
+</section>
+
+<section class="wrapper site-min-height">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="result" class="alert alert-block fade in hideDiv">
+                <button data-dismiss="alert" class="close close-sm" type="button">
+                    <i class="icon-remove"></i>
+                </button>
+                <h4><i id="result_sign"></i><span id="result_title"></span></h4>
+                <p id="result_msg"></p>
+            </div>
+        </div>
+    </div>
+    <!-- page start-->
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading panel-bg-orgin">
+                    <i class="icon-book"></i>十指指纹注册【不加密】
+                </header>
+                <div class="panel-body">
+                    <div class="stepy-tab">
+                        <ul id="enroll-titles" class="stepy-titles clearfix">
+                            <li id="enroll-title-0" class="current-step">
+                                <div>第一步</div>
+                            </li>
+                            <li id="enroll-title-1" class="">
+                                <div>第二步</div>
+                            </li>
+                            <li id="enroll-title-2" class="">
+                                <div>第三步</div>
+                            </li>
+                            <li id="enroll-title-3" class="">
+                                <div>第四步</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="form-horizontal" id="enroll">
+                        <fieldset title="第一步" class="step" id="enroll-step-0">
+                            <legend></legend>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>证件号码</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="eid" name="eid"
+                                           class="form-control" placeholder="对应被采集指纹人的护照号" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>护照上的姓</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="familyName" name="familyName"
+                                           class="form-control" placeholder="对应被采集指纹人护照上的姓" value="张" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">中间名</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="middleName" name="middleName"
+                                           class="form-control" placeholder="对应被采集指纹人的中间名" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>护照上的名</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="firstName" name="firstName"
+                                           class="form-control" placeholder="对应被采集指纹人护照上的名" value="测试" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">本国语言姓名</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="nationName"
+                                           name="nationName" class="form-control"
+                                           placeholder="对应被采集指纹人的本国语言姓名" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">中文名</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="cnName" name="cnName"
+                                           class="form-control" placeholder="对应被采集指纹人的中文名" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>国籍编码</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="nationCode" name="nationCode"
+                                           class="form-control" placeholder="对应被采集指纹人的国籍编码"  value="CN" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">国籍国身份证件号码</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="nationIdNum" name="nationIdNum"
+                                           class="form-control" placeholder="对应被采集指纹人的国籍国身份证件号码" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>性别</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="sex" name="sex"
+                                           class="form-control" placeholder="对应被采集指纹人护照上的性别" />
+                                    <span class="help-block">性别编码表为：1表示男，2表示女，0表示 未知性别</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>出生日期</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="birthday" name="birthday"
+                                           class="form-control" placeholder="对应被采集指纹人护照上的出生日期"  value="1" />
+                                    <span class="help-block">日期格式为：yyyy-MM-dd</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>交互令牌</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="sessionId" name="sessionId"
+                                           class="form-control" value="${TAS_SESSIONID}" />
+                                    <span class="help-block">自动预置最近一次获取的交互令牌</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset title="第二步" class="step" id="enroll-step-1">
+                            <legend></legend>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span
+                                        class="form-req">*</span>采集编号</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="collectNum" name="collectNum"
+                                           class="form-control" placeholder="对应由采集系统产生的采集编号" />
+                                    <span class="help-block">采集编号格式设定为：BR0002-01-0000000088 等</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span
+                                        class="form-req">*</span>采集业务员系统账号</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="collectPerson" name="collectPerson"
+                                           class="form-control" placeholder="对应采集业务员系统账号"  value="pql" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>采集使馆编码</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="collectPlace" name="collectPlace"
+                                           class="form-control" placeholder="对应采集使馆编码"  value="001" />
+                                    <span class="help-block">使馆编码表格式设定为：001表示中国，002表示美国，0003表示法国 等</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>采集设备型号</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="deviceType" name="deviceType"
+                                           class="form-control" placeholder="对应采集设备型号" value="15" />
+                                    <span class="help-block">采集设备型号为：15表示格林比特设备，13表示亚略特设备 等</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span
+                                        class="form-req">*</span>指纹数据来源编码</label>
+                                <div class="col-lg-10">
+                                    <input type="text" id="dataSourceFlag" name="dataSourceFlag"
+                                           class="form-control" value="WJ01" />
+                                    <span class="help-block">指纹数据来源编码为：WJ01表示外交部领事司采集上报</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset title="第三步" class="step" id="enroll-step-2">
+                            <legend></legend>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"><span class="form-req">*</span>指纹数据包</label>
+                                <div class="col-lg-10">
+											<textarea class="form-control ckeditor" id="fingerPackage"
+                                                      name="fingerPackage" placeholder="指纹数据包"
+                                                      rows="6"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group text-center clearfix">
+                                <button class="btn btn-success btn-shadow" type="button" id="button_pop_enroll">
+                                    <i class="icon-ok-sign"></i> 弹出指纹采集框
+                                </button>
+                                <button class="btn btn-success btn-shadow" type="button" id="button_get_fp_data">
+                                    <i class="icon-ok-sign"></i> 主动获取指纹数据
+                                </button>
+                            </div>
+                        </fieldset>
+                        <fieldset title="第四步" class="step" id="enroll-step-3">
+                            <legend></legend>
+                            <div class="page-header text-success">
+                                <h3>
+                                    指纹采集相关信息：
+                                </h3>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">采集编号</label>
+                                <div class="col-lg-10">
+                                    <p id="collectNum_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">采集业务员系统账号</label>
+                                <div class="col-lg-10">
+                                    <p id="collectPerson_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">采集使馆编码</label>
+                                <div class="col-lg-10">
+                                    <p id="collectPlace_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">采集设备型号</label>
+                                <div class="col-lg-10">
+                                    <p id="deviceType_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="page-header text-success">
+                                <h3>
+                                    被采集指纹人信息：
+                                </h3>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">证件号码</label>
+                                <div class="col-lg-10">
+                                    <p id="eid_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">护照上的姓</label>
+                                <div class="col-lg-10">
+                                    <p id="familyName_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">中间名</label>
+                                <div class="col-lg-10">
+                                    <p id="middleName_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">护照上的名</label>
+                                <div class="col-lg-10">
+                                    <p id="firstName_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">本国语言姓名</label>
+                                <div class="col-lg-10">
+                                    <p id="nationalName_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">中文名</label>
+                                <div class="col-lg-10">
+                                    <p id="cnName_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">国籍编码</label>
+                                <div class="col-lg-10">
+                                    <p id="nationCode_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">国籍国身份证件号码</label>
+                                <div class="col-lg-10">
+                                    <p id="nationIDNum_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">性别</label>
+                                <div class="col-lg-10">
+                                    <p id="sex_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">出生日期</label>
+                                <div class="col-lg-10">
+                                    <p id="birthday_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">交互令牌</label>
+                                <div class="col-lg-10">
+                                    <p id="sessionId_ct" class="form-control-static"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">指纹数据包</label>
+                                <div class="col-lg-10">
+                                    <p id="fingerPackage_ct" class="form-control-static"
+                                       style="overflow: scroll;"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <button class="finish btn btn-danger btn-form" type="button"
+                                id="button_submit">
+                            <i class="icon-ok-sign"></i> 提交
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery/jquery.stepy.js"></script>
+<script src="assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+<script type="text/javascript">
+    var fingerCtrl = document.getElementById("FINGERCtrl");
+
+    $(function () {
+        $('#enroll').stepy({
+            backLabel: '前一步',
+            block: true,
+            nextLabel: '下一步',
+            titleClick: false,
+            titleTarget: '.stepy-tab',
+            next: function (index) {
+                if (index == 3) {
+                    CaptureFinger();
+                }
+                $("#enroll input[type='text']").each(function (i) {
+                    var content = $(this).val();
+                    var a = $(this).attr("id");
+                    $("#" + a + "_ct").text(content);
+                });
+                $("#fingerPackage_ct").text($("#fingerPackage").val());
+            },
+            back: function (index) {
+                if (index == 3) {
+                    CaptureFinger();
+                }
+            },
+            finish: function () {
+                return false;
+            }
+        });
+
+        Init();
+    })
+    function Init() {
+        var ret = fingerCtrl.InitControl();
+        if (ret != 0)//初始化
+        {
+            if (ret == -104) {
+                alert("USBkey初始化失败");
+            }
+            if (ret == -101) {
+                alert("控件初始化失败");
+            }
+        }
+    }
+
+    function CaptureFinger() {
+        var num = $("#collectNum").val();
+        var name = $("#collectPerson").val();
+        var address = $("#collectPlace").val();
+        var time = getNowFormatDate();
+        var data = "{\"collectionTime\":\"" + time + "\",\"collectionPlace\":\"" + address + "\",\"collectionPerson\":\"" + name + "\",\"fingerID\":\"" + num + "\"}";
+        fingerCtrl.ShowFPWindow(data);//显示指纹采集窗口
+    }
+
+    $("#button_pop_enroll").on("click", function () {
+        CaptureFinger();
+    })
+
+    function OnGotPackData() {
+        var tp = fingerCtrl.GetFPData();//获取十指采集报文数据
+        $("#fingerPackage").val(tp);
+    }
+
+    $("#button_get_fp_data").on("click", function () {
+        // alert("主动获取指纹数据");
+        var tp = fingerCtrl.GetFPData();//hf获取十指采集报文数据;
+        $("#fingerPackage").val(tp);
+    })
+
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var seperator2 = ":";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+        return currentdate;
+    }
+</script>
+</body>
+</html>
