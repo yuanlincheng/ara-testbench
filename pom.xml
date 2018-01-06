@@ -51,6 +51,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!--导入Oracle数据库驱动相关的工具包-->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.0.0</version>
+        </dependency>
+        <!--导入druid数据库连接池相关的工具包-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <!--引用lombok组件,用于简化JAVA开发样板代码-->
         <dependency>
             <groupId>org.projectlombok</groupId>

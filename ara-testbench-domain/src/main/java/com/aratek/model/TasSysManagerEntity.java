@@ -27,6 +27,8 @@ public class TasSysManagerEntity {
 
     @Id
     @Column(name = "MANAGER_ID", nullable = false, precision = 0)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="trustafis_seq")
+    @SequenceGenerator(name="trustafis_seq", sequenceName="SEQ_TAS_FPIMAGE_DETAIL")
     public long getManagerId() {
         return managerId;
     }
