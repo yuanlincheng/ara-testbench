@@ -1,7 +1,6 @@
 package com.aratek.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/aglAfis")
+@Slf4j
 public class AglAfisController {
-    private static Logger log = LoggerFactory.getLogger(AglAfisController.class);
 
     /**
      *  进入安哥拉十指指纹注册页面

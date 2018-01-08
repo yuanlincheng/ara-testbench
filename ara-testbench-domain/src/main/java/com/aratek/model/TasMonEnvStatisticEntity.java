@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -30,7 +30,7 @@ public class TasMonEnvStatisticEntity {
     private long engineRunningTime;
 
     @Id
-    @Column(name = "MON_ENV_ID", nullable = false, precision = 0)
+    @Column(name = "MON_ENV_ID")
     public long getMonEnvId() {
         return monEnvId;
     }
@@ -40,7 +40,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_CLUSTER_CODE", nullable = false, length = 50)
+    @Column(name = "ENGINE_CLUSTER_CODE")
     public String getEngineClusterCode() {
         return engineClusterCode;
     }
@@ -50,7 +50,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_CODE", nullable = false, length = 50)
+    @Column(name = "ENGINE_SERVER_CODE")
     public String getEngineServerCode() {
         return engineServerCode;
     }
@@ -60,7 +60,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_BIOMETRICS_MODEL", nullable = false, length = 50)
+    @Column(name = "ENGINE_SERVER_BIOMETRICS_MODEL")
     public String getEngineServerBiometricsModel() {
         return engineServerBiometricsModel;
     }
@@ -70,7 +70,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_TYPE", nullable = false, length = 1)
+    @Column(name = "ENGINE_SERVER_TYPE")
     public String getEngineServerType() {
         return engineServerType;
     }
@@ -80,7 +80,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_IP", nullable = false, length = 50)
+    @Column(name = "ENGINE_SERVER_IP")
     public String getEngineServerIp() {
         return engineServerIp;
     }
@@ -90,7 +90,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_MAC", nullable = false, length = 50)
+    @Column(name = "ENGINE_SERVER_MAC")
     public String getEngineServerMac() {
         return engineServerMac;
     }
@@ -100,7 +100,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_CPU", nullable = true, length = 50)
+    @Column(name = "ENGINE_SERVER_CPU")
     public String getEngineServerCpu() {
         return engineServerCpu;
     }
@@ -110,7 +110,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_PORT", nullable = false, length = 50)
+    @Column(name = "ENGINE_SERVER_PORT")
     public String getEngineServerPort() {
         return engineServerPort;
     }
@@ -120,7 +120,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_WORKSTATION_STATUS", nullable = false, length = 1)
+    @Column(name = "ENGINE_WORKSTATION_STATUS")
     public String getEngineWorkstationStatus() {
         return engineWorkstationStatus;
     }
@@ -130,7 +130,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_WARN_FIELD", nullable = true, length = 50)
+    @Column(name = "ENGINE_WARN_FIELD")
     public String getEngineWarnField() {
         return engineWarnField;
     }
@@ -140,7 +140,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_NETWORK_STATUS", nullable = false, length = 1)
+    @Column(name = "ENGINE_NETWORK_STATUS")
     public String getEngineNetworkStatus() {
         return engineNetworkStatus;
     }
@@ -150,7 +150,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_LODA_FINGER_NUMBER", nullable = false, precision = 0)
+    @Column(name = "ENGINE_LODA_FINGER_NUMBER")
     public long getEngineLodaFingerNumber() {
         return engineLodaFingerNumber;
     }
@@ -160,7 +160,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -170,7 +170,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "MODIFY_DATE", nullable = true, length = 20)
+    @Column(name = "MODIFY_DATE")
     public String getModifyDate() {
         return modifyDate;
     }
@@ -180,7 +180,7 @@ public class TasMonEnvStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_RUNNING_TIME", nullable = false, precision = 0)
+    @Column(name = "ENGINE_RUNNING_TIME")
     public long getEngineRunningTime() {
         return engineRunningTime;
     }

@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -18,10 +17,9 @@ public class TasSysRoleEntity {
     private String purview;
     private String note;
     private String isRoot;
-    private Collection<TasSysManagerEntity> tasSysManagersByRoleId;
 
     @Id
-    @Column(name = "ROLE_ID", nullable = false, precision = 0)
+    @Column(name = "ROLE_ID")
     public long getRoleId() {
         return roleId;
     }
@@ -31,7 +29,7 @@ public class TasSysRoleEntity {
     }
 
     @Basic
-    @Column(name = "NAME", nullable = false, length = 30)
+    @Column(name = "NAME")
     public String getName() {
         return name;
     }
@@ -41,7 +39,7 @@ public class TasSysRoleEntity {
     }
 
     @Basic
-    @Column(name = "PURVIEW", nullable = false, length = 150)
+    @Column(name = "PURVIEW")
     public String getPurview() {
         return purview;
     }
@@ -51,7 +49,7 @@ public class TasSysRoleEntity {
     }
 
     @Basic
-    @Column(name = "NOTE", nullable = true, length = 250)
+    @Column(name = "NOTE")
     public String getNote() {
         return note;
     }
@@ -61,7 +59,7 @@ public class TasSysRoleEntity {
     }
 
     @Basic
-    @Column(name = "IS_ROOT", nullable = false, length = 1)
+    @Column(name = "IS_ROOT")
     public String getIsRoot() {
         return isRoot;
     }
@@ -94,14 +92,5 @@ public class TasSysRoleEntity {
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (isRoot != null ? isRoot.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasSysRoleByRoleId")
-    public Collection<TasSysManagerEntity> getTasSysManagersByRoleId() {
-        return tasSysManagersByRoleId;
-    }
-
-    public void setTasSysManagersByRoleId(Collection<TasSysManagerEntity> tasSysManagersByRoleId) {
-        this.tasSysManagersByRoleId = tasSysManagersByRoleId;
     }
 }

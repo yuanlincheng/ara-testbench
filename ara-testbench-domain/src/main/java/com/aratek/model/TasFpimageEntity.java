@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -30,11 +30,9 @@ public class TasFpimageEntity {
     private String collectPerson;
     private String collectTime;
     private String createDate;
-    private TasPersonEntity tasPersonByPersonId;
-    private TasFpimageDetailEntity tasFpimageDetailByFpImgDetailId;
 
     @Id
-    @Column(name = "FP_IMAGE_ID", nullable = false, precision = 0)
+    @Column(name = "FP_IMAGE_ID")
     public long getFpImageId() {
         return fpImageId;
     }
@@ -44,7 +42,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "PERSON_ID", nullable = false, length = 30)
+    @Column(name = "PERSON_ID")
     public String getPersonId() {
         return personId;
     }
@@ -54,7 +52,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_IMG_DETAIL_ID", nullable = false, precision = 0)
+    @Column(name = "FP_IMG_DETAIL_ID")
     public long getFpImgDetailId() {
         return fpImgDetailId;
     }
@@ -64,7 +62,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_IMAGE_FILE_NAME", nullable = true, length = 80)
+    @Column(name = "FP_IMAGE_FILE_NAME")
     public String getFpImageFileName() {
         return fpImageFileName;
     }
@@ -74,7 +72,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_DATASOURCE_CODE", nullable = false, length = 4)
+    @Column(name = "FP_DATASOURCE_CODE")
     public String getFpDatasourceCode() {
         return fpDatasourceCode;
     }
@@ -84,7 +82,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_INDEX_CODE", nullable = false, length = 2)
+    @Column(name = "FP_INDEX_CODE")
     public String getFpIndexCode() {
         return fpIndexCode;
     }
@@ -94,7 +92,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "QUALITY_LEVEL", nullable = false, precision = 0)
+    @Column(name = "QUALITY_LEVEL")
     public long getQualityLevel() {
         return qualityLevel;
     }
@@ -104,7 +102,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "QUALITY_SCORE", nullable = false, precision = 0)
+    @Column(name = "QUALITY_SCORE")
     public long getQualityScore() {
         return qualityScore;
     }
@@ -114,7 +112,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "IMAGE_FORMAT_CODE", nullable = true, length = 2)
+    @Column(name = "IMAGE_FORMAT_CODE")
     public String getImageFormatCode() {
         return imageFormatCode;
     }
@@ -124,7 +122,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "IMAGE_DATA", nullable = true)
+    @Column(name = "IMAGE_DATA")
     public byte[] getImageData() {
         return imageData;
     }
@@ -134,7 +132,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "COL_STATU_CODE", nullable = false, precision = 0)
+    @Column(name = "COL_STATU_CODE")
     public long getColStatuCode() {
         return colStatuCode;
     }
@@ -144,7 +142,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_DEVICE_CODE", nullable = true, length = 4)
+    @Column(name = "FP_DEVICE_CODE")
     public String getFpDeviceCode() {
         return fpDeviceCode;
     }
@@ -154,7 +152,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "FP_DEVICE_SN", nullable = true, length = 20)
+    @Column(name = "FP_DEVICE_SN")
     public String getFpDeviceSn() {
         return fpDeviceSn;
     }
@@ -164,7 +162,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PLACE", nullable = true, length = 10)
+    @Column(name = "COLLECT_PLACE")
     public String getCollectPlace() {
         return collectPlace;
     }
@@ -174,7 +172,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PERSON", nullable = true, length = 30)
+    @Column(name = "COLLECT_PERSON")
     public String getCollectPerson() {
         return collectPerson;
     }
@@ -184,7 +182,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_TIME", nullable = true, length = 20)
+    @Column(name = "COLLECT_TIME")
     public String getCollectTime() {
         return collectTime;
     }
@@ -194,7 +192,7 @@ public class TasFpimageEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -255,25 +253,5 @@ public class TasFpimageEntity {
         result = 31 * result + (collectTime != null ? collectTime.hashCode() : 0);
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "PERSON_ID", referencedColumnName = "PERSON_ID", nullable = false)
-    public TasPersonEntity getTasPersonByPersonId() {
-        return tasPersonByPersonId;
-    }
-
-    public void setTasPersonByPersonId(TasPersonEntity tasPersonByPersonId) {
-        this.tasPersonByPersonId = tasPersonByPersonId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "FP_IMG_DETAIL_ID", referencedColumnName = "FP_IMG_DETAIL_ID", nullable = false)
-    public TasFpimageDetailEntity getTasFpimageDetailByFpImgDetailId() {
-        return tasFpimageDetailByFpImgDetailId;
-    }
-
-    public void setTasFpimageDetailByFpImgDetailId(TasFpimageDetailEntity tasFpimageDetailByFpImgDetailId) {
-        this.tasFpimageDetailByFpImgDetailId = tasFpimageDetailByFpImgDetailId;
     }
 }

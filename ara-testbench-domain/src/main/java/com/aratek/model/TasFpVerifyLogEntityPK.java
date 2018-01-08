@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -16,7 +16,7 @@ public class TasFpVerifyLogEntityPK implements Serializable {
     private long topNumber;
     private String policyCode;
 
-    @Column(name = "LOG_VERIFY_LOG_ID", nullable = false, length = 50)
+    @Column(name = "LOG_VERIFY_LOG_ID")
     @Id
     public String getLogVerifyLogId() {
         return logVerifyLogId;
@@ -26,7 +26,7 @@ public class TasFpVerifyLogEntityPK implements Serializable {
         this.logVerifyLogId = logVerifyLogId;
     }
 
-    @Column(name = "TOP_NUMBER", nullable = false, precision = 0)
+    @Column(name = "TOP_NUMBER")
     @Id
     public long getTopNumber() {
         return topNumber;
@@ -36,7 +36,7 @@ public class TasFpVerifyLogEntityPK implements Serializable {
         this.topNumber = topNumber;
     }
 
-    @Column(name = "POLICY_CODE", nullable = false, length = 4)
+    @Column(name = "POLICY_CODE")
     @Id
     public String getPolicyCode() {
         return policyCode;

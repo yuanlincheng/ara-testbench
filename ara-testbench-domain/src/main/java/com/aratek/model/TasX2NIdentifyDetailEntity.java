@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -30,10 +30,9 @@ public class TasX2NIdentifyDetailEntity {
     private String createDate;
     private String policyCode;
     private String identifyResultId;
-    private TasX2NIdentifyResultEntity tasX2NIdentifyResultByIdentifyResultUuid;
 
     @Basic
-    @Column(name = "IDENTIFY_RESULT_UUID", nullable = false, length = 20)
+    @Column(name = "IDENTIFY_RESULT_UUID")
     public String getIdentifyResultUuid() {
         return identifyResultUuid;
     }
@@ -43,7 +42,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Id
-    @Column(name = "IDENTIFY_DETAIL_ID", nullable = false, precision = 0)
+    @Column(name = "IDENTIFY_DETAIL_ID")
     public long getIdentifyDetailId() {
         return identifyDetailId;
     }
@@ -53,7 +52,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESPONSE_FP_ID", nullable = false, length = 50)
+    @Column(name = "RESPONSE_FP_ID")
     public String getResponseFpId() {
         return responseFpId;
     }
@@ -63,7 +62,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESPONSE_TOP_NUMBER", nullable = false, precision = 0)
+    @Column(name = "RESPONSE_TOP_NUMBER")
     public long getResponseTopNumber() {
         return responseTopNumber;
     }
@@ -73,7 +72,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_TOTAL_SCORE", nullable = true, precision = 2)
+    @Column(name = "RESULT_TOTAL_SCORE")
     public Long getResultTotalScore() {
         return resultTotalScore;
     }
@@ -83,7 +82,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_THUMB_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_THUMB_VER_SCORE")
     public Long getLeftThumbVerScore() {
         return leftThumbVerScore;
     }
@@ -93,7 +92,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_INDEX_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_INDEX_VER_SCORE")
     public Long getLeftIndexVerScore() {
         return leftIndexVerScore;
     }
@@ -103,7 +102,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_MIDDLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_MIDDLE_VER_SCORE")
     public Long getLeftMiddleVerScore() {
         return leftMiddleVerScore;
     }
@@ -113,7 +112,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_RING_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_RING_VER_SCORE")
     public Long getLeftRingVerScore() {
         return leftRingVerScore;
     }
@@ -123,7 +122,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_LITTLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_LITTLE_VER_SCORE")
     public Long getLeftLittleVerScore() {
         return leftLittleVerScore;
     }
@@ -133,7 +132,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_THUMB_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_THUMB_VER_SCORE")
     public Long getRightThumbVerScore() {
         return rightThumbVerScore;
     }
@@ -143,7 +142,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_INDEX_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_INDEX_VER_SCORE")
     public Long getRightIndexVerScore() {
         return rightIndexVerScore;
     }
@@ -153,7 +152,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_MIDDLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_MIDDLE_VER_SCORE")
     public Long getRightMiddleVerScore() {
         return rightMiddleVerScore;
     }
@@ -163,7 +162,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_RING_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_RING_VER_SCORE")
     public Long getRightRingVerScore() {
         return rightRingVerScore;
     }
@@ -173,7 +172,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_LITTLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_LITTLE_VER_SCORE")
     public Long getRightLittleVerScore() {
         return rightLittleVerScore;
     }
@@ -183,7 +182,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -193,7 +192,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "POLICY_CODE", nullable = true, length = 4)
+    @Column(name = "POLICY_CODE")
     public String getPolicyCode() {
         return policyCode;
     }
@@ -203,7 +202,7 @@ public class TasX2NIdentifyDetailEntity {
     }
 
     @Basic
-    @Column(name = "IDENTIFY_RESULT_ID", nullable = true, length = 20)
+    @Column(name = "IDENTIFY_RESULT_ID")
     public String getIdentifyResultId() {
         return identifyResultId;
     }
@@ -275,15 +274,5 @@ public class TasX2NIdentifyDetailEntity {
         result = 31 * result + (policyCode != null ? policyCode.hashCode() : 0);
         result = 31 * result + (identifyResultId != null ? identifyResultId.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "IDENTIFY_RESULT_UUID", referencedColumnName = "IDENTIFY_RESULT_UUID", nullable = false)
-    public TasX2NIdentifyResultEntity getTasX2NIdentifyResultByIdentifyResultUuid() {
-        return tasX2NIdentifyResultByIdentifyResultUuid;
-    }
-
-    public void setTasX2NIdentifyResultByIdentifyResultUuid(TasX2NIdentifyResultEntity tasX2NIdentifyResultByIdentifyResultUuid) {
-        this.tasX2NIdentifyResultByIdentifyResultUuid = tasX2NIdentifyResultByIdentifyResultUuid;
     }
 }

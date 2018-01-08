@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -15,7 +15,7 @@ public class TasFpNodeEntityPK implements Serializable {
     private String masterId;
     private String nodeId;
 
-    @Column(name = "MASTER_ID", nullable = false, length = 7)
+    @Column(name = "MASTER_ID")
     @Id
     public String getMasterId() {
         return masterId;
@@ -25,7 +25,7 @@ public class TasFpNodeEntityPK implements Serializable {
         this.masterId = masterId;
     }
 
-    @Column(name = "NODE_ID", nullable = false, length = 7)
+    @Column(name = "NODE_ID")
     @Id
     public String getNodeId() {
         return nodeId;

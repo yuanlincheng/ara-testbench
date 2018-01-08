@@ -1,9 +1,8 @@
 package com.aratek.configuration;
 
 import com.aratek.exception.InternalSystemException;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.service.spi.ServiceException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,9 +18,8 @@ import java.util.Map;
  * own: Aratek
  */
 @ControllerAdvice
+@Slf4j
 public class GlobalExceptionConfiguration {
-
-    private static Logger log = LoggerFactory.getLogger(GlobalExceptionConfiguration.class);
 
     /**
      * 处理 Exception 类型的异常

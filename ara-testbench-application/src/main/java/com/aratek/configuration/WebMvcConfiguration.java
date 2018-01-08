@@ -1,7 +1,6 @@
 package com.aratek.configuration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -20,9 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  * own: Aratek
  */
 @Configuration
+@Slf4j
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
-
-    private static Logger log = LoggerFactory.getLogger(WebMvcConfiguration.class);
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

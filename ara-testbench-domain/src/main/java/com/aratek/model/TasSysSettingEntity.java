@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -23,7 +23,7 @@ public class TasSysSettingEntity {
     private String note;
 
     @Id
-    @Column(name = "SETTING_ID", nullable = false, precision = 0)
+    @Column(name = "SETTING_ID")
     public long getSettingId() {
         return settingId;
     }
@@ -33,7 +33,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "APP_ID", nullable = false, length = 30)
+    @Column(name = "APP_ID")
     public String getAppId() {
         return appId;
     }
@@ -43,7 +43,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "MAIN_KEY", nullable = true, length = 50)
+    @Column(name = "MAIN_KEY")
     public String getMainKey() {
         return mainKey;
     }
@@ -53,7 +53,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "SUB_KEY", nullable = false, length = 50)
+    @Column(name = "SUB_KEY")
     public String getSubKey() {
         return subKey;
     }
@@ -63,7 +63,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "VALUE", nullable = false, length = 100)
+    @Column(name = "VALUE")
     public String getValue() {
         return value;
     }
@@ -73,7 +73,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "MODEFY_STATUS", nullable = false, length = 1)
+    @Column(name = "MODEFY_STATUS")
     public String getModefyStatus() {
         return modefyStatus;
     }
@@ -83,7 +83,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "SHOW_STATUS", nullable = false, length = 1)
+    @Column(name = "SHOW_STATUS")
     public String getShowStatus() {
         return showStatus;
     }
@@ -93,7 +93,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "PARANAME", nullable = false, length = 100)
+    @Column(name = "PARANAME")
     public String getParaname() {
         return paraname;
     }
@@ -103,7 +103,7 @@ public class TasSysSettingEntity {
     }
 
     @Basic
-    @Column(name = "NOTE", nullable = true, length = 250)
+    @Column(name = "NOTE")
     public String getNote() {
         return note;
     }

@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -47,11 +46,9 @@ public class TasFpimageDetailEntity {
     private String collectPlace;
     private String collectTime;
     private String collectPerson;
-    private Collection<TasFpimageEntity> tasFpimagesByFpImgDetailId;
-    private TasFpExchageFileEntity tasFpExchageFileByFpExchageFileId;
 
     @Id
-    @Column(name = "FP_IMG_DETAIL_ID", nullable = false, precision = 0)
+    @Column(name = "FP_IMG_DETAIL_ID")
     public long getFpImgDetailId() {
         return fpImgDetailId;
     }
@@ -61,7 +58,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "FP_EXCHAGE_FILE_ID", nullable = false, length = 50)
+    @Column(name = "FP_EXCHAGE_FILE_ID")
     public String getFpExchageFileId() {
         return fpExchageFileId;
     }
@@ -71,7 +68,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "IMAGE_WIDTH", nullable = false, precision = 0)
+    @Column(name = "IMAGE_WIDTH")
     public long getImageWidth() {
         return imageWidth;
     }
@@ -81,7 +78,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "IMAGE_HEIGHT", nullable = false, precision = 0)
+    @Column(name = "IMAGE_HEIGHT")
     public long getImageHeight() {
         return imageHeight;
     }
@@ -91,7 +88,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "FP_DEVICE_CODE", nullable = false, length = 4)
+    @Column(name = "FP_DEVICE_CODE")
     public String getFpDeviceCode() {
         return fpDeviceCode;
     }
@@ -101,7 +98,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "DEVICE_SN", nullable = false, length = 20)
+    @Column(name = "DEVICE_SN")
     public String getDeviceSn() {
         return deviceSn;
     }
@@ -111,7 +108,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "TECHNICAL_FLAG", nullable = true, precision = 0)
+    @Column(name = "TECHNICAL_FLAG")
     public Long getTechnicalFlag() {
         return technicalFlag;
     }
@@ -121,7 +118,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "DEV_SUP_FLAG", nullable = true, length = 4)
+    @Column(name = "DEV_SUP_FLAG")
     public String getDevSupFlag() {
         return devSupFlag;
     }
@@ -131,7 +128,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "DEV_TYPE_FLAG", nullable = true, length = 4)
+    @Column(name = "DEV_TYPE_FLAG")
     public String getDevTypeFlag() {
         return devTypeFlag;
     }
@@ -141,7 +138,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "DEVICE_VERSION", nullable = true, length = 2)
+    @Column(name = "DEVICE_VERSION")
     public String getDeviceVersion() {
         return deviceVersion;
     }
@@ -151,7 +148,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "ACQT_LEVEL", nullable = true, precision = 0)
+    @Column(name = "ACQT_LEVEL")
     public Long getAcqtLevel() {
         return acqtLevel;
     }
@@ -161,7 +158,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "SCALE_UNITS", nullable = true, precision = 0)
+    @Column(name = "SCALE_UNITS")
     public Long getScaleUnits() {
         return scaleUnits;
     }
@@ -171,7 +168,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "HORIZSCAN_RL", nullable = true, precision = 0)
+    @Column(name = "HORIZSCAN_RL")
     public Long getHorizscanRl() {
         return horizscanRl;
     }
@@ -181,7 +178,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "VERTSCAN_RL", nullable = true, precision = 0)
+    @Column(name = "VERTSCAN_RL")
     public Long getVertscanRl() {
         return vertscanRl;
     }
@@ -191,7 +188,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "MAX_IMAGE_WIDTH", nullable = true, precision = 0)
+    @Column(name = "MAX_IMAGE_WIDTH")
     public Long getMaxImageWidth() {
         return maxImageWidth;
     }
@@ -201,7 +198,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "MAX_IMAGE_HEIGHT", nullable = true, precision = 0)
+    @Column(name = "MAX_IMAGE_HEIGHT")
     public Long getMaxImageHeight() {
         return maxImageHeight;
     }
@@ -211,7 +208,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "CERT_MARK", nullable = true, precision = 0)
+    @Column(name = "CERT_MARK")
     public Long getCertMark() {
         return certMark;
     }
@@ -221,7 +218,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "CER_COUNT", nullable = true, precision = 0)
+    @Column(name = "CER_COUNT")
     public Long getCerCount() {
         return cerCount;
     }
@@ -231,7 +228,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "CER_ORG", nullable = true, length = 4)
+    @Column(name = "CER_ORG")
     public String getCerOrg() {
         return cerOrg;
     }
@@ -241,7 +238,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "HORIZIMAGE_RL", nullable = true, precision = 0)
+    @Column(name = "HORIZIMAGE_RL")
     public Long getHorizimageRl() {
         return horizimageRl;
     }
@@ -251,7 +248,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "VERTIMAGE_RL", nullable = true, precision = 0)
+    @Column(name = "VERTIMAGE_RL")
     public Long getVertimageRl() {
         return vertimageRl;
     }
@@ -261,7 +258,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "IMAGE_RL", nullable = false, precision = 0)
+    @Column(name = "IMAGE_RL")
     public long getImageRl() {
         return imageRl;
     }
@@ -271,7 +268,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "PIXEL_DEPTH", nullable = false, precision = 0)
+    @Column(name = "PIXEL_DEPTH")
     public long getPixelDepth() {
         return pixelDepth;
     }
@@ -281,7 +278,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "IMPRINT_TYPE", nullable = true, precision = 0)
+    @Column(name = "IMPRINT_TYPE")
     public Long getImprintType() {
         return imprintType;
     }
@@ -291,7 +288,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COM_ALGORITHM", nullable = true, precision = 0)
+    @Column(name = "COM_ALGORITHM")
     public Long getComAlgorithm() {
         return comAlgorithm;
     }
@@ -301,7 +298,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COM_SUP_FLAG", nullable = true, length = 4)
+    @Column(name = "COM_SUP_FLAG")
     public String getComSupFlag() {
         return comSupFlag;
     }
@@ -311,7 +308,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COM_ALG_VERSION", nullable = true, precision = 0)
+    @Column(name = "COM_ALG_VERSION")
     public Long getComAlgVersion() {
         return comAlgVersion;
     }
@@ -321,7 +318,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "QUA_ALGORITHM", nullable = true, length = 4)
+    @Column(name = "QUA_ALGORITHM")
     public String getQuaAlgorithm() {
         return quaAlgorithm;
     }
@@ -331,7 +328,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "QUA_SUP_FLAG", nullable = true, length = 4)
+    @Column(name = "QUA_SUP_FLAG")
     public String getQuaSupFlag() {
         return quaSupFlag;
     }
@@ -341,7 +338,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "QUA_ALG_VERSION", nullable = true, precision = 0)
+    @Column(name = "QUA_ALG_VERSION")
     public Long getQuaAlgVersion() {
         return quaAlgVersion;
     }
@@ -351,7 +348,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -361,7 +358,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PLACE", nullable = false, length = 10)
+    @Column(name = "COLLECT_PLACE")
     public String getCollectPlace() {
         return collectPlace;
     }
@@ -371,7 +368,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_TIME", nullable = false, length = 20)
+    @Column(name = "COLLECT_TIME")
     public String getCollectTime() {
         return collectTime;
     }
@@ -381,7 +378,7 @@ public class TasFpimageDetailEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PERSON", nullable = false, length = 30)
+    @Column(name = "COLLECT_PERSON")
     public String getCollectPerson() {
         return collectPerson;
     }
@@ -480,24 +477,5 @@ public class TasFpimageDetailEntity {
         result = 31 * result + (collectTime != null ? collectTime.hashCode() : 0);
         result = 31 * result + (collectPerson != null ? collectPerson.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasFpimageDetailByFpImgDetailId")
-    public Collection<TasFpimageEntity> getTasFpimagesByFpImgDetailId() {
-        return tasFpimagesByFpImgDetailId;
-    }
-
-    public void setTasFpimagesByFpImgDetailId(Collection<TasFpimageEntity> tasFpimagesByFpImgDetailId) {
-        this.tasFpimagesByFpImgDetailId = tasFpimagesByFpImgDetailId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "FP_EXCHAGE_FILE_ID", referencedColumnName = "FP_EXCHAGE_FILE_ID", nullable = false)
-    public TasFpExchageFileEntity getTasFpExchageFileByFpExchageFileId() {
-        return tasFpExchageFileByFpExchageFileId;
-    }
-
-    public void setTasFpExchageFileByFpExchageFileId(TasFpExchageFileEntity tasFpExchageFileByFpExchageFileId) {
-        this.tasFpExchageFileByFpExchageFileId = tasFpExchageFileByFpExchageFileId;
     }
 }

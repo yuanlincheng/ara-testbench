@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -25,12 +24,9 @@ public class TasTaskEntity {
     private String taskReceiveDate;
     private String createDate;
     private String taskUuid;
-    private Collection<Tas1To1VerifyResultEntity> tas1To1VerifyResultsByTaskUuid;
-    private Collection<TasDuplicateResultEntity> tasDuplicateResultsByTaskUuid;
-    private Collection<TasX2NIdentifyResultEntity> tasX2NIdentifyResultsByTaskUuid;
 
     @Basic
-    @Column(name = "TASK_ID", nullable = true, length = 30)
+    @Column(name = "TASK_ID")
     public String getTaskId() {
         return taskId;
     }
@@ -40,7 +36,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "FOREIN_REQUEST_ID", nullable = true, length = 50)
+    @Column(name = "FOREIN_REQUEST_ID")
     public String getForeinRequestId() {
         return foreinRequestId;
     }
@@ -50,7 +46,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_COM_CODE", nullable = false, length = 4)
+    @Column(name = "TASK_COM_CODE")
     public String getTaskComCode() {
         return taskComCode;
     }
@@ -60,7 +56,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_COMMENT", nullable = false)
+    @Column(name = "TASK_COMMENT")
     public String getTaskComment() {
         return taskComment;
     }
@@ -70,7 +66,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_RESULT", nullable = true)
+    @Column(name = "TASK_RESULT")
     public String getTaskResult() {
         return taskResult;
     }
@@ -80,7 +76,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_RET_CODE", nullable = true, length = 4)
+    @Column(name = "TASK_RET_CODE")
     public String getTaskRetCode() {
         return taskRetCode;
     }
@@ -90,7 +86,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_STATE", nullable = true, length = 1)
+    @Column(name = "TASK_STATE")
     public String getTaskState() {
         return taskState;
     }
@@ -100,7 +96,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_COMPLETE_DATE", nullable = true, length = 20)
+    @Column(name = "TASK_COMPLETE_DATE")
     public String getTaskCompleteDate() {
         return taskCompleteDate;
     }
@@ -110,7 +106,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_RECEIVE_FLAG", nullable = false, length = 1)
+    @Column(name = "TASK_RECEIVE_FLAG")
     public String getTaskReceiveFlag() {
         return taskReceiveFlag;
     }
@@ -120,7 +116,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "TASK_RECEIVE_DATE", nullable = true, length = 20)
+    @Column(name = "TASK_RECEIVE_DATE")
     public String getTaskReceiveDate() {
         return taskReceiveDate;
     }
@@ -130,7 +126,7 @@ public class TasTaskEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -140,7 +136,7 @@ public class TasTaskEntity {
     }
 
     @Id
-    @Column(name = "TASK_UUID", nullable = false, length = 20)
+    @Column(name = "TASK_UUID")
     public String getTaskUuid() {
         return taskUuid;
     }
@@ -191,32 +187,5 @@ public class TasTaskEntity {
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         result = 31 * result + (taskUuid != null ? taskUuid.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasTaskByTaskUuid")
-    public Collection<Tas1To1VerifyResultEntity> getTas1To1VerifyResultsByTaskUuid() {
-        return tas1To1VerifyResultsByTaskUuid;
-    }
-
-    public void setTas1To1VerifyResultsByTaskUuid(Collection<Tas1To1VerifyResultEntity> tas1To1VerifyResultsByTaskUuid) {
-        this.tas1To1VerifyResultsByTaskUuid = tas1To1VerifyResultsByTaskUuid;
-    }
-
-    @OneToMany(mappedBy = "tasTaskByTaskUuid")
-    public Collection<TasDuplicateResultEntity> getTasDuplicateResultsByTaskUuid() {
-        return tasDuplicateResultsByTaskUuid;
-    }
-
-    public void setTasDuplicateResultsByTaskUuid(Collection<TasDuplicateResultEntity> tasDuplicateResultsByTaskUuid) {
-        this.tasDuplicateResultsByTaskUuid = tasDuplicateResultsByTaskUuid;
-    }
-
-    @OneToMany(mappedBy = "tasTaskByTaskUuid")
-    public Collection<TasX2NIdentifyResultEntity> getTasX2NIdentifyResultsByTaskUuid() {
-        return tasX2NIdentifyResultsByTaskUuid;
-    }
-
-    public void setTasX2NIdentifyResultsByTaskUuid(Collection<TasX2NIdentifyResultEntity> tasX2NIdentifyResultsByTaskUuid) {
-        this.tasX2NIdentifyResultsByTaskUuid = tasX2NIdentifyResultsByTaskUuid;
     }
 }

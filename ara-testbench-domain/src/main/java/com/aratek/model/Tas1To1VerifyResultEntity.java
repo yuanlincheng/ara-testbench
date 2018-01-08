@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -30,11 +30,9 @@ public class Tas1To1VerifyResultEntity {
     private String createDate;
     private String taskId;
     private String verifyResultUuid;
-    private TasPersonEntity tasPersonByPersonId;
-    private TasTaskEntity tasTaskByTaskUuid;
 
     @Basic
-    @Column(name = "PERSON_ID", nullable = false, length = 30)
+    @Column(name = "PERSON_ID")
     public String getPersonId() {
         return personId;
     }
@@ -44,7 +42,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_UUID", nullable = false, length = 20)
+    @Column(name = "TASK_UUID")
     public String getTaskUuid() {
         return taskUuid;
     }
@@ -54,7 +52,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFY_RESULT_ID", nullable = true, length = 20)
+    @Column(name = "VERIFY_RESULT_ID")
     public String getVerifyResultId() {
         return verifyResultId;
     }
@@ -64,7 +62,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFY_TYPE", nullable = false, length = 2)
+    @Column(name = "VERIFY_TYPE")
     public String getVerifyType() {
         return verifyType;
     }
@@ -74,7 +72,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFY_SOURCE_DATA", nullable = true)
+    @Column(name = "VERIFY_SOURCE_DATA")
     public String getVerifySourceData() {
         return verifySourceData;
     }
@@ -84,7 +82,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFIED_FP_COUNT", nullable = true, precision = 0)
+    @Column(name = "VERIFIED_FP_COUNT")
     public Long getVerifiedFpCount() {
         return verifiedFpCount;
     }
@@ -94,7 +92,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFY_RESULT", nullable = false, length = 200)
+    @Column(name = "VERIFY_RESULT")
     public String getVerifyResult() {
         return verifyResult;
     }
@@ -104,7 +102,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFIED_RANK1_FP_INDEX", nullable = true, length = 30)
+    @Column(name = "VERIFIED_RANK1_FP_INDEX")
     public String getVerifiedRank1FpIndex() {
         return verifiedRank1FpIndex;
     }
@@ -114,7 +112,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFIED_RANK1_FP_SOURCE", nullable = true, length = 30)
+    @Column(name = "VERIFIED_RANK1_FP_SOURCE")
     public String getVerifiedRank1FpSource() {
         return verifiedRank1FpSource;
     }
@@ -124,7 +122,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_THRESHOLD", nullable = false, length = 30)
+    @Column(name = "MATCHING_THRESHOLD")
     public String getMatchingThreshold() {
         return matchingThreshold;
     }
@@ -134,7 +132,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "VERIFY_SUCCESS_FLAG", nullable = true, length = 1)
+    @Column(name = "VERIFY_SUCCESS_FLAG")
     public String getVerifySuccessFlag() {
         return verifySuccessFlag;
     }
@@ -144,7 +142,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_CODE", nullable = true, length = 5)
+    @Column(name = "RESULT_CODE")
     public String getResultCode() {
         return resultCode;
     }
@@ -154,7 +152,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_MSG", nullable = true, length = 100)
+    @Column(name = "RESULT_MSG")
     public String getResultMsg() {
         return resultMsg;
     }
@@ -164,7 +162,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "ACTION_STATU", nullable = false, length = 1)
+    @Column(name = "ACTION_STATU")
     public String getActionStatu() {
         return actionStatu;
     }
@@ -174,7 +172,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "READ_STATU", nullable = false, length = 1)
+    @Column(name = "READ_STATU")
     public String getReadStatu() {
         return readStatu;
     }
@@ -184,7 +182,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -194,7 +192,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_ID", nullable = true, length = 30)
+    @Column(name = "TASK_ID")
     public String getTaskId() {
         return taskId;
     }
@@ -204,7 +202,7 @@ public class Tas1To1VerifyResultEntity {
     }
 
     @Id
-    @Column(name = "VERIFY_RESULT_UUID", nullable = false, length = 20)
+    @Column(name = "VERIFY_RESULT_UUID")
     public String getVerifyResultUuid() {
         return verifyResultUuid;
     }
@@ -271,25 +269,5 @@ public class Tas1To1VerifyResultEntity {
         result = 31 * result + (taskId != null ? taskId.hashCode() : 0);
         result = 31 * result + (verifyResultUuid != null ? verifyResultUuid.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "PERSON_ID", referencedColumnName = "PERSON_ID", nullable = false)
-    public TasPersonEntity getTasPersonByPersonId() {
-        return tasPersonByPersonId;
-    }
-
-    public void setTasPersonByPersonId(TasPersonEntity tasPersonByPersonId) {
-        this.tasPersonByPersonId = tasPersonByPersonId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "TASK_UUID", referencedColumnName = "TASK_UUID", nullable = false)
-    public TasTaskEntity getTasTaskByTaskUuid() {
-        return tasTaskByTaskUuid;
-    }
-
-    public void setTasTaskByTaskUuid(TasTaskEntity tasTaskByTaskUuid) {
-        this.tasTaskByTaskUuid = tasTaskByTaskUuid;
     }
 }

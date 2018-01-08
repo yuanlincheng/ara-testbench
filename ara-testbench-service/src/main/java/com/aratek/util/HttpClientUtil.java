@@ -8,7 +8,7 @@
 package com.aratek.util;
 
 import com.aratek.exception.InternalServiceException;
-import com.aratek.model.Person;
+import com.aratek.model.TasPersonEntity;
 import com.aratek.model.vo.ResponseWsVO;
 import com.util.CommonStringUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -299,21 +299,21 @@ public class HttpClientUtil {
      * @return ResponseWsVO 响应对象
      * @throws InternalServiceException
      */
-    public  ResponseWsVO wsAfisUpdatePerson(String sessionId, Person person) throws InternalServiceException {
+    public  ResponseWsVO wsAfisUpdatePerson(String sessionId, TasPersonEntity person) throws InternalServiceException {
         log.info("[SYS_LOG][wsAfisUpdatePerson][{}][{}]",sessionId,person.toString());
         //添加报文数据
         MAP_DATA.put(dataTag[2], sessionId);
-        MAP_DATA.put(dataTag[4], person.getFileId());
-        MAP_DATA.put(dataTag[9], person.getEid());
+        MAP_DATA.put(dataTag[4], person.getFpExchageFileId());
+        MAP_DATA.put(dataTag[9], person.getPersonEid());
         MAP_DATA.put(dataTag[10], person.getFamilyName());
         MAP_DATA.put(dataTag[11], person.getMiddleName());
         MAP_DATA.put(dataTag[12], person.getFirstName());
-        MAP_DATA.put(dataTag[13], person.getNationName());
+        MAP_DATA.put(dataTag[13], person.getNationalName());
         MAP_DATA.put(dataTag[14], person.getCnName());
         MAP_DATA.put(dataTag[15], person.getNationCode());
         MAP_DATA.put(dataTag[16], person.getNationIdNum());
         MAP_DATA.put(dataTag[17], person.getSex());
-        MAP_DATA.put(dataTag[18], person.getBirthday());
+        MAP_DATA.put(dataTag[18], person.getBirthDate());
 
         //构造请求报文数据
         String TASRequest = doWsXMLWork(10, MAP_DATA);

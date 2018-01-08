@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -27,11 +26,9 @@ public class TasDuplicateResultEntity {
     private String createDate;
     private String duplicateResultUuid;
     private String taskId;
-    private Collection<TasDuplicateDetailEntity> tasDuplicateDetailsByDuplicateResultUuid;
-    private TasTaskEntity tasTaskByTaskUuid;
 
     @Basic
-    @Column(name = "DUPLICATE_RESULT_ID", nullable = true, length = 20)
+    @Column(name = "DUPLICATE_RESULT_ID")
     public String getDuplicateResultId() {
         return duplicateResultId;
     }
@@ -41,7 +38,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_UUID", nullable = false, length = 20)
+    @Column(name = "TASK_UUID")
     public String getTaskUuid() {
         return taskUuid;
     }
@@ -51,7 +48,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "REQUEST_FP_ID", nullable = true, length = 50)
+    @Column(name = "REQUEST_FP_ID")
     public String getRequestFpId() {
         return requestFpId;
     }
@@ -61,7 +58,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "PERSON_ID", nullable = true, length = 30)
+    @Column(name = "PERSON_ID")
     public String getPersonId() {
         return personId;
     }
@@ -71,7 +68,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "DUPLICATE_PERSON_COUNT", nullable = true, precision = 0)
+    @Column(name = "DUPLICATE_PERSON_COUNT")
     public Long getDuplicatePersonCount() {
         return duplicatePersonCount;
     }
@@ -81,7 +78,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "POLICY_CODE", nullable = true, length = 4)
+    @Column(name = "POLICY_CODE")
     public String getPolicyCode() {
         return policyCode;
     }
@@ -91,7 +88,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_CODE", nullable = true, length = 5)
+    @Column(name = "RESULT_CODE")
     public String getResultCode() {
         return resultCode;
     }
@@ -101,7 +98,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_MSG", nullable = true, length = 100)
+    @Column(name = "RESULT_MSG")
     public String getResultMsg() {
         return resultMsg;
     }
@@ -111,7 +108,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "ACTION_STATU", nullable = false, precision = 0)
+    @Column(name = "ACTION_STATU")
     public long getActionStatu() {
         return actionStatu;
     }
@@ -121,7 +118,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "CONTENT", nullable = true)
+    @Column(name = "CONTENT")
     public String getContent() {
         return content;
     }
@@ -131,7 +128,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "READ_STATU", nullable = false, length = 1)
+    @Column(name = "READ_STATU")
     public String getReadStatu() {
         return readStatu;
     }
@@ -141,7 +138,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -151,7 +148,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Id
-    @Column(name = "DUPLICATE_RESULT_UUID", nullable = false, length = 20)
+    @Column(name = "DUPLICATE_RESULT_UUID")
     public String getDuplicateResultUuid() {
         return duplicateResultUuid;
     }
@@ -161,7 +158,7 @@ public class TasDuplicateResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_ID", nullable = true, length = 30)
+    @Column(name = "TASK_ID")
     public String getTaskId() {
         return taskId;
     }
@@ -215,24 +212,5 @@ public class TasDuplicateResultEntity {
         result = 31 * result + (duplicateResultUuid != null ? duplicateResultUuid.hashCode() : 0);
         result = 31 * result + (taskId != null ? taskId.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasDuplicateResultByDuplicateResultUuid")
-    public Collection<TasDuplicateDetailEntity> getTasDuplicateDetailsByDuplicateResultUuid() {
-        return tasDuplicateDetailsByDuplicateResultUuid;
-    }
-
-    public void setTasDuplicateDetailsByDuplicateResultUuid(Collection<TasDuplicateDetailEntity> tasDuplicateDetailsByDuplicateResultUuid) {
-        this.tasDuplicateDetailsByDuplicateResultUuid = tasDuplicateDetailsByDuplicateResultUuid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "TASK_UUID", referencedColumnName = "TASK_UUID", nullable = false)
-    public TasTaskEntity getTasTaskByTaskUuid() {
-        return tasTaskByTaskUuid;
-    }
-
-    public void setTasTaskByTaskUuid(TasTaskEntity tasTaskByTaskUuid) {
-        this.tasTaskByTaskUuid = tasTaskByTaskUuid;
     }
 }

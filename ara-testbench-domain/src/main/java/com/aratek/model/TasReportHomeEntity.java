@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -24,7 +24,7 @@ public class TasReportHomeEntity {
     private String taskStatuData;
 
     @Id
-    @Column(name = "HOME_ID", nullable = false, precision = 0)
+    @Column(name = "HOME_ID")
     public long getHomeId() {
         return homeId;
     }
@@ -34,7 +34,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "FP_NUM", nullable = true, precision = 0)
+    @Column(name = "FP_NUM")
     public Long getFpNum() {
         return fpNum;
     }
@@ -44,7 +44,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "USER_NUM", nullable = true, precision = 0)
+    @Column(name = "USER_NUM")
     public Long getUserNum() {
         return userNum;
     }
@@ -54,7 +54,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "SERVER_NUM", nullable = true, precision = 0)
+    @Column(name = "SERVER_NUM")
     public Long getServerNum() {
         return serverNum;
     }
@@ -64,7 +64,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "BUS_NUM", nullable = true, precision = 0)
+    @Column(name = "BUS_NUM")
     public Long getBusNum() {
         return busNum;
     }
@@ -74,7 +74,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "BUS_FAIL_NUM", nullable = true, precision = 0)
+    @Column(name = "BUS_FAIL_NUM")
     public Long getBusFailNum() {
         return busFailNum;
     }
@@ -84,7 +84,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "FP_ADD_DATA", nullable = true, length = 500)
+    @Column(name = "FP_ADD_DATA")
     public String getFpAddData() {
         return fpAddData;
     }
@@ -94,7 +94,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "BUS_TYPE_DATA", nullable = true, length = 500)
+    @Column(name = "BUS_TYPE_DATA")
     public String getBusTypeData() {
         return busTypeData;
     }
@@ -104,7 +104,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "SERVER_STATU_DATA", nullable = true, length = 50)
+    @Column(name = "SERVER_STATU_DATA")
     public String getServerStatuData() {
         return serverStatuData;
     }
@@ -114,7 +114,7 @@ public class TasReportHomeEntity {
     }
 
     @Basic
-    @Column(name = "TASK_STATU_DATA", nullable = true, length = 50)
+    @Column(name = "TASK_STATU_DATA")
     public String getTaskStatuData() {
         return taskStatuData;
     }

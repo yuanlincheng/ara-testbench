@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -23,7 +23,7 @@ public class TasLogBusinessEntity {
     private String resultMsg;
 
     @Id
-    @Column(name = "LOG_BUS_ID", nullable = false, precision = 0)
+    @Column(name = "LOG_BUS_ID")
     public long getLogBusId() {
         return logBusId;
     }
@@ -33,7 +33,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "ACTION_TYPE", nullable = false, length = 2)
+    @Column(name = "ACTION_TYPE")
     public String getActionType() {
         return actionType;
     }
@@ -43,7 +43,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_FLAG", nullable = true, length = 1)
+    @Column(name = "RESULT_FLAG")
     public String getResultFlag() {
         return resultFlag;
     }
@@ -53,7 +53,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_CODE", nullable = true, length = 5)
+    @Column(name = "RESULT_CODE")
     public String getResultCode() {
         return resultCode;
     }
@@ -63,7 +63,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "CONTENT", nullable = true, length = 500)
+    @Column(name = "CONTENT")
     public String getContent() {
         return content;
     }
@@ -73,7 +73,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_ID", nullable = true, length = 50)
+    @Column(name = "RESULT_ID")
     public String getResultId() {
         return resultId;
     }
@@ -83,7 +83,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "CLIENT_IP", nullable = true, length = 20)
+    @Column(name = "CLIENT_IP")
     public String getClientIp() {
         return clientIp;
     }
@@ -93,7 +93,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -103,7 +103,7 @@ public class TasLogBusinessEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_MSG", nullable = true, length = 100)
+    @Column(name = "RESULT_MSG")
     public String getResultMsg() {
         return resultMsg;
     }

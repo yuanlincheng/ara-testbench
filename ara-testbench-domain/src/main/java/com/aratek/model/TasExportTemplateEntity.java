@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -27,7 +27,7 @@ public class TasExportTemplateEntity {
     private String algVersion;
 
     @Id
-    @Column(name = "TEMPLATE_ID", nullable = false, length = 35)
+    @Column(name = "TEMPLATE_ID")
     public String getTemplateId() {
         return templateId;
     }
@@ -37,7 +37,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEMPLATE_DATA", nullable = true, length = 4000)
+    @Column(name = "TEMPLATE_DATA")
     public String getTemplateData() {
         return templateData;
     }
@@ -47,7 +47,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "READ_FLAG", nullable = true, length = 2)
+    @Column(name = "READ_FLAG")
     public String getReadFlag() {
         return readFlag;
     }
@@ -57,7 +57,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEMPLATE_CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "TEMPLATE_CREATE_DATE")
     public String getTemplateCreateDate() {
         return templateCreateDate;
     }
@@ -67,7 +67,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "CONVERT_FLAG", nullable = false, length = 3)
+    @Column(name = "CONVERT_FLAG")
     public String getConvertFlag() {
         return convertFlag;
     }
@@ -77,7 +77,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "IMG_WIDTH", nullable = true, precision = 0)
+    @Column(name = "IMG_WIDTH")
     public Long getImgWidth() {
         return imgWidth;
     }
@@ -87,7 +87,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "IMG_HEIGHT", nullable = true, precision = 0)
+    @Column(name = "IMG_HEIGHT")
     public Long getImgHeight() {
         return imgHeight;
     }
@@ -97,7 +97,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "IMG_QUALITY", nullable = true, precision = 0)
+    @Column(name = "IMG_QUALITY")
     public Long getImgQuality() {
         return imgQuality;
     }
@@ -107,7 +107,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEM_MIN", nullable = true, precision = 0)
+    @Column(name = "TEM_MIN")
     public Long getTemMin() {
         return temMin;
     }
@@ -117,7 +117,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "IMG_DPI", nullable = true, precision = 0)
+    @Column(name = "IMG_DPI")
     public Long getImgDpi() {
         return imgDpi;
     }
@@ -127,7 +127,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "IMG_DEPTH", nullable = true, precision = 0)
+    @Column(name = "IMG_DEPTH")
     public Long getImgDepth() {
         return imgDepth;
     }
@@ -137,7 +137,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "ALG_CODE", nullable = true, length = 10)
+    @Column(name = "ALG_CODE")
     public String getAlgCode() {
         return algCode;
     }
@@ -147,7 +147,7 @@ public class TasExportTemplateEntity {
     }
 
     @Basic
-    @Column(name = "ALG_VERSION", nullable = true, length = 10)
+    @Column(name = "ALG_VERSION")
     public String getAlgVersion() {
         return algVersion;
     }

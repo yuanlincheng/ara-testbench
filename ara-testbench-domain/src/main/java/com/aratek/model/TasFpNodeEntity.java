@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -28,7 +28,7 @@ public class TasFpNodeEntity {
     private Long ideCDay;
 
     @Id
-    @Column(name = "MASTER_ID", nullable = false, length = 7)
+    @Column(name = "MASTER_ID")
     public String getMasterId() {
         return masterId;
     }
@@ -38,7 +38,7 @@ public class TasFpNodeEntity {
     }
 
     @Id
-    @Column(name = "NODE_ID", nullable = false, length = 7)
+    @Column(name = "NODE_ID")
     public String getNodeId() {
         return nodeId;
     }
@@ -48,7 +48,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "ENR_THREAD", nullable = false, precision = 0)
+    @Column(name = "ENR_THREAD")
     public long getEnrThread() {
         return enrThread;
     }
@@ -58,7 +58,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "VER_THREAD", nullable = false, precision = 0)
+    @Column(name = "VER_THREAD")
     public long getVerThread() {
         return verThread;
     }
@@ -68,7 +68,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "IDE_THREAD", nullable = false, precision = 0)
+    @Column(name = "IDE_THREAD")
     public long getIdeThread() {
         return ideThread;
     }
@@ -78,7 +78,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "DATA_ZONE", nullable = false, length = 512)
+    @Column(name = "DATA_ZONE")
     public String getDataZone() {
         return dataZone;
     }
@@ -88,7 +88,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "ONLINE_STAT", nullable = false, length = 16)
+    @Column(name = "ONLINE_STAT")
     public String getOnlineStat() {
         return onlineStat;
     }
@@ -98,7 +98,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "ENR_C_HOUR", nullable = true, precision = 0)
+    @Column(name = "ENR_C_HOUR")
     public Long getEnrCHour() {
         return enrCHour;
     }
@@ -108,7 +108,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "ENR_C_DAY", nullable = true, precision = 0)
+    @Column(name = "ENR_C_DAY")
     public Long getEnrCDay() {
         return enrCDay;
     }
@@ -118,7 +118,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "VER_C_HOUR", nullable = true, precision = 0)
+    @Column(name = "VER_C_HOUR")
     public Long getVerCHour() {
         return verCHour;
     }
@@ -128,7 +128,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "VER_C_DAY", nullable = true, precision = 0)
+    @Column(name = "VER_C_DAY")
     public Long getVerCDay() {
         return verCDay;
     }
@@ -138,7 +138,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "IDE_C_HOUR", nullable = true, precision = 0)
+    @Column(name = "IDE_C_HOUR")
     public Long getIdeCHour() {
         return ideCHour;
     }
@@ -148,7 +148,7 @@ public class TasFpNodeEntity {
     }
 
     @Basic
-    @Column(name = "IDE_C_DAY", nullable = true, precision = 0)
+    @Column(name = "IDE_C_DAY")
     public Long getIdeCDay() {
         return ideCDay;
     }

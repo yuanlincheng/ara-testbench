@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -32,14 +31,9 @@ public class TasPersonEntity {
     private String updateStatu;
     private String createDate;
     private String modifyDate;
-    private Collection<Tas1To1VerifyResultEntity> tas1To1VerifyResultsByPersonId;
-    private Collection<TasFpimageEntity> tasFpimagesByPersonId;
-    private Collection<TasFpTemplateEntity> tasFpTemplatesByPersonId;
-    private Collection<TasFpTpBufferEntity> tasFpTpBuffersByPersonId;
-    private TasFpExchageFileEntity tasFpExchageFileByFpExchageFileId;
 
     @Id
-    @Column(name = "PERSON_ID", nullable = false, length = 30)
+    @Column(name = "PERSON_ID")
     public String getPersonId() {
         return personId;
     }
@@ -49,7 +43,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "FP_EXCHAGE_FILE_ID", nullable = false, length = 50)
+    @Column(name = "FP_EXCHAGE_FILE_ID")
     public String getFpExchageFileId() {
         return fpExchageFileId;
     }
@@ -59,7 +53,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "PERSON_EID", nullable = false, length = 80)
+    @Column(name = "PERSON_EID")
     public String getPersonEid() {
         return personEid;
     }
@@ -69,7 +63,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "FAMILY_NAME", nullable = true, length = 60)
+    @Column(name = "FAMILY_NAME")
     public String getFamilyName() {
         return familyName;
     }
@@ -79,7 +73,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "MIDDLE_NAME", nullable = true, length = 60)
+    @Column(name = "MIDDLE_NAME")
     public String getMiddleName() {
         return middleName;
     }
@@ -89,7 +83,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "FIRST_NAME", nullable = true, length = 60)
+    @Column(name = "FIRST_NAME")
     public String getFirstName() {
         return firstName;
     }
@@ -99,7 +93,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "NATIONAL_NAME", nullable = true, length = 80)
+    @Column(name = "NATIONAL_NAME")
     public String getNationalName() {
         return nationalName;
     }
@@ -109,7 +103,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "CN_NAME", nullable = true, length = 30)
+    @Column(name = "CN_NAME")
     public String getCnName() {
         return cnName;
     }
@@ -119,7 +113,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "SEX", nullable = false, length = 2)
+    @Column(name = "SEX")
     public String getSex() {
         return sex;
     }
@@ -129,7 +123,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "BIRTH_DATE", nullable = false, length = 30)
+    @Column(name = "BIRTH_DATE")
     public String getBirthDate() {
         return birthDate;
     }
@@ -139,7 +133,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "NATION_CODE", nullable = false, length = 30)
+    @Column(name = "NATION_CODE")
     public String getNationCode() {
         return nationCode;
     }
@@ -149,7 +143,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "NATION_ID_NUM", nullable = true, length = 60)
+    @Column(name = "NATION_ID_NUM")
     public String getNationIdNum() {
         return nationIdNum;
     }
@@ -159,7 +153,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "FP_DATASOURCE_CODE", nullable = false, length = 4)
+    @Column(name = "FP_DATASOURCE_CODE")
     public String getFpDatasourceCode() {
         return fpDatasourceCode;
     }
@@ -169,7 +163,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PLACE", nullable = true, length = 10)
+    @Column(name = "COLLECT_PLACE")
     public String getCollectPlace() {
         return collectPlace;
     }
@@ -179,7 +173,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_PERSON", nullable = true, length = 30)
+    @Column(name = "COLLECT_PERSON")
     public String getCollectPerson() {
         return collectPerson;
     }
@@ -189,7 +183,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "ACTIVE_STATU", nullable = false, length = 1)
+    @Column(name = "ACTIVE_STATU")
     public String getActiveStatu() {
         return activeStatu;
     }
@@ -199,7 +193,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "UPDATE_STATU", nullable = false, length = 1)
+    @Column(name = "UPDATE_STATU")
     public String getUpdateStatu() {
         return updateStatu;
     }
@@ -209,7 +203,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -219,7 +213,7 @@ public class TasPersonEntity {
     }
 
     @Basic
-    @Column(name = "MODIFY_DATE", nullable = false, length = 20)
+    @Column(name = "MODIFY_DATE")
     public String getModifyDate() {
         return modifyDate;
     }
@@ -283,51 +277,5 @@ public class TasPersonEntity {
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasPersonByPersonId")
-    public Collection<Tas1To1VerifyResultEntity> getTas1To1VerifyResultsByPersonId() {
-        return tas1To1VerifyResultsByPersonId;
-    }
-
-    public void setTas1To1VerifyResultsByPersonId(Collection<Tas1To1VerifyResultEntity> tas1To1VerifyResultsByPersonId) {
-        this.tas1To1VerifyResultsByPersonId = tas1To1VerifyResultsByPersonId;
-    }
-
-    @OneToMany(mappedBy = "tasPersonByPersonId")
-    public Collection<TasFpimageEntity> getTasFpimagesByPersonId() {
-        return tasFpimagesByPersonId;
-    }
-
-    public void setTasFpimagesByPersonId(Collection<TasFpimageEntity> tasFpimagesByPersonId) {
-        this.tasFpimagesByPersonId = tasFpimagesByPersonId;
-    }
-
-    @OneToMany(mappedBy = "tasPersonByPersonId")
-    public Collection<TasFpTemplateEntity> getTasFpTemplatesByPersonId() {
-        return tasFpTemplatesByPersonId;
-    }
-
-    public void setTasFpTemplatesByPersonId(Collection<TasFpTemplateEntity> tasFpTemplatesByPersonId) {
-        this.tasFpTemplatesByPersonId = tasFpTemplatesByPersonId;
-    }
-
-    @OneToMany(mappedBy = "tasPersonByPersonId")
-    public Collection<TasFpTpBufferEntity> getTasFpTpBuffersByPersonId() {
-        return tasFpTpBuffersByPersonId;
-    }
-
-    public void setTasFpTpBuffersByPersonId(Collection<TasFpTpBufferEntity> tasFpTpBuffersByPersonId) {
-        this.tasFpTpBuffersByPersonId = tasFpTpBuffersByPersonId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "FP_EXCHAGE_FILE_ID", referencedColumnName = "FP_EXCHAGE_FILE_ID", nullable = false)
-    public TasFpExchageFileEntity getTasFpExchageFileByFpExchageFileId() {
-        return tasFpExchageFileByFpExchageFileId;
-    }
-
-    public void setTasFpExchageFileByFpExchageFileId(TasFpExchageFileEntity tasFpExchageFileByFpExchageFileId) {
-        this.tasFpExchageFileByFpExchageFileId = tasFpExchageFileByFpExchageFileId;
     }
 }

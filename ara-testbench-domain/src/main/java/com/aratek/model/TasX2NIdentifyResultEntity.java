@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -26,11 +25,9 @@ public class TasX2NIdentifyResultEntity {
     private String identifyResultUuid;
     private String taskId;
     private String resultFlage;
-    private Collection<TasX2NIdentifyDetailEntity> tasX2NIdentifyDetailsByIdentifyResultUuid;
-    private TasTaskEntity tasTaskByTaskUuid;
 
     @Basic
-    @Column(name = "IDENTIFY_RESULT_ID", nullable = true, length = 20)
+    @Column(name = "IDENTIFY_RESULT_ID")
     public String getIdentifyResultId() {
         return identifyResultId;
     }
@@ -40,7 +37,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_UUID", nullable = false, length = 20)
+    @Column(name = "TASK_UUID")
     public String getTaskUuid() {
         return taskUuid;
     }
@@ -50,7 +47,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_FLAG", nullable = true, length = 1)
+    @Column(name = "RESULT_FLAG")
     public String getResultFlag() {
         return resultFlag;
     }
@@ -60,7 +57,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_CODE", nullable = true, length = 5)
+    @Column(name = "RESULT_CODE")
     public String getResultCode() {
         return resultCode;
     }
@@ -70,7 +67,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_MSG", nullable = true, length = 100)
+    @Column(name = "RESULT_MSG")
     public String getResultMsg() {
         return resultMsg;
     }
@@ -80,7 +77,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "CONTENT", nullable = true)
+    @Column(name = "CONTENT")
     public String getContent() {
         return content;
     }
@@ -90,7 +87,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "ACTION_STATU", nullable = false, precision = 0)
+    @Column(name = "ACTION_STATU")
     public long getActionStatu() {
         return actionStatu;
     }
@@ -100,7 +97,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "READ_STATU", nullable = false, length = 1)
+    @Column(name = "READ_STATU")
     public String getReadStatu() {
         return readStatu;
     }
@@ -110,7 +107,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -120,7 +117,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "POLICY_CODE", nullable = false, length = 4)
+    @Column(name = "POLICY_CODE")
     public String getPolicyCode() {
         return policyCode;
     }
@@ -130,7 +127,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Id
-    @Column(name = "IDENTIFY_RESULT_UUID", nullable = false, length = 20)
+    @Column(name = "IDENTIFY_RESULT_UUID")
     public String getIdentifyResultUuid() {
         return identifyResultUuid;
     }
@@ -140,7 +137,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "TASK_ID", nullable = true, length = 30)
+    @Column(name = "TASK_ID")
     public String getTaskId() {
         return taskId;
     }
@@ -150,7 +147,7 @@ public class TasX2NIdentifyResultEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_FLAGE", nullable = true, length = 1)
+    @Column(name = "RESULT_FLAGE")
     public String getResultFlage() {
         return resultFlage;
     }
@@ -201,24 +198,5 @@ public class TasX2NIdentifyResultEntity {
         result = 31 * result + (taskId != null ? taskId.hashCode() : 0);
         result = 31 * result + (resultFlage != null ? resultFlage.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasX2NIdentifyResultByIdentifyResultUuid")
-    public Collection<TasX2NIdentifyDetailEntity> getTasX2NIdentifyDetailsByIdentifyResultUuid() {
-        return tasX2NIdentifyDetailsByIdentifyResultUuid;
-    }
-
-    public void setTasX2NIdentifyDetailsByIdentifyResultUuid(Collection<TasX2NIdentifyDetailEntity> tasX2NIdentifyDetailsByIdentifyResultUuid) {
-        this.tasX2NIdentifyDetailsByIdentifyResultUuid = tasX2NIdentifyDetailsByIdentifyResultUuid;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "TASK_UUID", referencedColumnName = "TASK_UUID", nullable = false)
-    public TasTaskEntity getTasTaskByTaskUuid() {
-        return tasTaskByTaskUuid;
-    }
-
-    public void setTasTaskByTaskUuid(TasTaskEntity tasTaskByTaskUuid) {
-        this.tasTaskByTaskUuid = tasTaskByTaskUuid;
     }
 }

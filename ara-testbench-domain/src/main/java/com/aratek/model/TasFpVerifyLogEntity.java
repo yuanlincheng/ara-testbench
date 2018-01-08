@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -52,7 +52,7 @@ public class TasFpVerifyLogEntity {
     private Long matchingScore10;
 
     @Id
-    @Column(name = "LOG_VERIFY_LOG_ID", nullable = false, length = 50)
+    @Column(name = "LOG_VERIFY_LOG_ID")
     public String getLogVerifyLogId() {
         return logVerifyLogId;
     }
@@ -62,7 +62,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Id
-    @Column(name = "TOP_NUMBER", nullable = false, precision = 0)
+    @Column(name = "TOP_NUMBER")
     public long getTopNumber() {
         return topNumber;
     }
@@ -72,7 +72,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Id
-    @Column(name = "POLICY_CODE", nullable = false, length = 4)
+    @Column(name = "POLICY_CODE")
     public String getPolicyCode() {
         return policyCode;
     }
@@ -82,7 +82,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "OPT_TYPE", nullable = false, length = 20)
+    @Column(name = "OPT_TYPE")
     public String getOptType() {
         return optType;
     }
@@ -92,7 +92,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "RETURN_CODE", nullable = false, length = 20)
+    @Column(name = "RETURN_CODE")
     public String getReturnCode() {
         return returnCode;
     }
@@ -102,7 +102,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "SELF_FLAG", nullable = true, length = 1)
+    @Column(name = "SELF_FLAG")
     public String getSelfFlag() {
         return selfFlag;
     }
@@ -112,7 +112,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "START_TIME", nullable = false, length = 20)
+    @Column(name = "START_TIME")
     public String getStartTime() {
         return startTime;
     }
@@ -122,7 +122,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "SPEND_TIME", nullable = true, precision = 0)
+    @Column(name = "SPEND_TIME")
     public Long getSpendTime() {
         return spendTime;
     }
@@ -132,7 +132,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_TIME", nullable = true, precision = 0)
+    @Column(name = "FILTER_TIME")
     public Long getFilterTime() {
         return filterTime;
     }
@@ -142,7 +142,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_PERCENT", nullable = true, precision = 0)
+    @Column(name = "FILTER_PERCENT")
     public Long getFilterPercent() {
         return filterPercent;
     }
@@ -152,7 +152,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "PERSON_ID_REQUEST", nullable = true, length = 30)
+    @Column(name = "PERSON_ID_REQUEST")
     public String getPersonIdRequest() {
         return personIdRequest;
     }
@@ -162,7 +162,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "PERSON_ID_FOUND", nullable = true, length = 300)
+    @Column(name = "PERSON_ID_FOUND")
     public String getPersonIdFound() {
         return personIdFound;
     }
@@ -172,7 +172,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_THRESHOLD", nullable = true, length = 30)
+    @Column(name = "FILTER_THRESHOLD")
     public String getFilterThreshold() {
         return filterThreshold;
     }
@@ -182,7 +182,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_THRESHOLD", nullable = true, length = 30)
+    @Column(name = "MATCHING_THRESHOLD")
     public String getMatchingThreshold() {
         return matchingThreshold;
     }
@@ -192,7 +192,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_CNT", nullable = true, length = 10)
+    @Column(name = "MATCHING_CNT")
     public String getMatchingCnt() {
         return matchingCnt;
     }
@@ -202,7 +202,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE0", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE0")
     public Long getFilterScore0() {
         return filterScore0;
     }
@@ -212,7 +212,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE0", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE0")
     public Long getMatchingScore0() {
         return matchingScore0;
     }
@@ -222,7 +222,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE1", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE1")
     public Long getFilterScore1() {
         return filterScore1;
     }
@@ -232,7 +232,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE1", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE1")
     public Long getMatchingScore1() {
         return matchingScore1;
     }
@@ -242,7 +242,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE2", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE2")
     public Long getFilterScore2() {
         return filterScore2;
     }
@@ -252,7 +252,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE2", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE2")
     public Long getMatchingScore2() {
         return matchingScore2;
     }
@@ -262,7 +262,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE3", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE3")
     public Long getFilterScore3() {
         return filterScore3;
     }
@@ -272,7 +272,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE3", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE3")
     public Long getMatchingScore3() {
         return matchingScore3;
     }
@@ -282,7 +282,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE4", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE4")
     public Long getFilterScore4() {
         return filterScore4;
     }
@@ -292,7 +292,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE4", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE4")
     public Long getMatchingScore4() {
         return matchingScore4;
     }
@@ -302,7 +302,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE5", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE5")
     public Long getFilterScore5() {
         return filterScore5;
     }
@@ -312,7 +312,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE5", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE5")
     public Long getMatchingScore5() {
         return matchingScore5;
     }
@@ -322,7 +322,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE6", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE6")
     public Long getFilterScore6() {
         return filterScore6;
     }
@@ -332,7 +332,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE6", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE6")
     public Long getMatchingScore6() {
         return matchingScore6;
     }
@@ -342,7 +342,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE7", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE7")
     public Long getFilterScore7() {
         return filterScore7;
     }
@@ -352,7 +352,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE7", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE7")
     public Long getMatchingScore7() {
         return matchingScore7;
     }
@@ -362,7 +362,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE8", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE8")
     public Long getFilterScore8() {
         return filterScore8;
     }
@@ -372,7 +372,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE8", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE8")
     public Long getMatchingScore8() {
         return matchingScore8;
     }
@@ -382,7 +382,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE9", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE9")
     public Long getFilterScore9() {
         return filterScore9;
     }
@@ -392,7 +392,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE9", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE9")
     public Long getMatchingScore9() {
         return matchingScore9;
     }
@@ -402,7 +402,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "FILTER_SCORE10", nullable = true, precision = 0)
+    @Column(name = "FILTER_SCORE10")
     public Long getFilterScore10() {
         return filterScore10;
     }
@@ -412,7 +412,7 @@ public class TasFpVerifyLogEntity {
     }
 
     @Basic
-    @Column(name = "MATCHING_SCORE10", nullable = true, precision = 0)
+    @Column(name = "MATCHING_SCORE10")
     public Long getMatchingScore10() {
         return matchingScore10;
     }

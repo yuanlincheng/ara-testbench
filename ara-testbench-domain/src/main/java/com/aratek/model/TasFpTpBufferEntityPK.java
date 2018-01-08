@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -17,7 +17,7 @@ public class TasFpTpBufferEntityPK implements Serializable {
     private String fpTemplateNo;
     private String activeStatu;
 
-    @Column(name = "PERSON_ID", nullable = false, length = 30)
+    @Column(name = "PERSON_ID")
     @Id
     public String getPersonId() {
         return personId;
@@ -27,7 +27,7 @@ public class TasFpTpBufferEntityPK implements Serializable {
         this.personId = personId;
     }
 
-    @Column(name = "FP_INDEX_CODE", nullable = false, length = 2)
+    @Column(name = "FP_INDEX_CODE")
     @Id
     public String getFpIndexCode() {
         return fpIndexCode;
@@ -37,7 +37,7 @@ public class TasFpTpBufferEntityPK implements Serializable {
         this.fpIndexCode = fpIndexCode;
     }
 
-    @Column(name = "FP_TEMPLATE_NO", nullable = false, length = 2)
+    @Column(name = "FP_TEMPLATE_NO")
     @Id
     public String getFpTemplateNo() {
         return fpTemplateNo;
@@ -47,7 +47,7 @@ public class TasFpTpBufferEntityPK implements Serializable {
         this.fpTemplateNo = fpTemplateNo;
     }
 
-    @Column(name = "ACTIVE_STATU", nullable = false, length = 1)
+    @Column(name = "ACTIVE_STATU")
     @Id
     public String getActiveStatu() {
         return activeStatu;

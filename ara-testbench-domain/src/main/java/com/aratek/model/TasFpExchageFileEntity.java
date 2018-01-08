@@ -1,12 +1,11 @@
 package com.aratek.model;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -22,11 +21,9 @@ public class TasFpExchageFileEntity {
     private String collectDate;
     private String createDate;
     private String dataVersion;
-    private Collection<TasFpimageDetailEntity> tasFpimageDetailsByFpExchageFileId;
-    private Collection<TasPersonEntity> tasPeopleByFpExchageFileId;
 
     @Id
-    @Column(name = "FP_EXCHAGE_FILE_ID", nullable = false, length = 50)
+    @Column(name = "FP_EXCHAGE_FILE_ID")
     public String getFpExchageFileId() {
         return fpExchageFileId;
     }
@@ -36,7 +33,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "FP_DATASOURCE_CODE", nullable = false, length = 4)
+    @Column(name = "FP_DATASOURCE_CODE")
     public String getFpDatasourceCode() {
         return fpDatasourceCode;
     }
@@ -46,7 +43,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "OPERATE_TYPE", nullable = false, length = 1)
+    @Column(name = "OPERATE_TYPE")
     public String getOperateType() {
         return operateType;
     }
@@ -56,7 +53,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "FILE_SAVE_URL", nullable = true, length = 255)
+    @Column(name = "FILE_SAVE_URL")
     public String getFileSaveUrl() {
         return fileSaveUrl;
     }
@@ -66,7 +63,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "FILE_RESOLVE_RESULT", nullable = true, length = 4)
+    @Column(name = "FILE_RESOLVE_RESULT")
     public String getFileResolveResult() {
         return fileResolveResult;
     }
@@ -76,7 +73,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "FILE_RESOLVE_RES_MSG", nullable = true, length = 250)
+    @Column(name = "FILE_RESOLVE_RES_MSG")
     public String getFileResolveResMsg() {
         return fileResolveResMsg;
     }
@@ -86,7 +83,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "COLLECT_DATE", nullable = false, length = 20)
+    @Column(name = "COLLECT_DATE")
     public String getCollectDate() {
         return collectDate;
     }
@@ -96,7 +93,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -106,7 +103,7 @@ public class TasFpExchageFileEntity {
     }
 
     @Basic
-    @Column(name = "DATA_VERSION", nullable = true, length = 4)
+    @Column(name = "DATA_VERSION")
     public String getDataVersion() {
         return dataVersion;
     }
@@ -151,23 +148,5 @@ public class TasFpExchageFileEntity {
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         result = 31 * result + (dataVersion != null ? dataVersion.hashCode() : 0);
         return result;
-    }
-
-    @OneToMany(mappedBy = "tasFpExchageFileByFpExchageFileId")
-    public Collection<TasFpimageDetailEntity> getTasFpimageDetailsByFpExchageFileId() {
-        return tasFpimageDetailsByFpExchageFileId;
-    }
-
-    public void setTasFpimageDetailsByFpExchageFileId(Collection<TasFpimageDetailEntity> tasFpimageDetailsByFpExchageFileId) {
-        this.tasFpimageDetailsByFpExchageFileId = tasFpimageDetailsByFpExchageFileId;
-    }
-
-    @OneToMany(mappedBy = "tasFpExchageFileByFpExchageFileId")
-    public Collection<TasPersonEntity> getTasPeopleByFpExchageFileId() {
-        return tasPeopleByFpExchageFileId;
-    }
-
-    public void setTasPeopleByFpExchageFileId(Collection<TasPersonEntity> tasPeopleByFpExchageFileId) {
-        this.tasPeopleByFpExchageFileId = tasPeopleByFpExchageFileId;
     }
 }

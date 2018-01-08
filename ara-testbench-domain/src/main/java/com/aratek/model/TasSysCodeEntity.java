@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -23,7 +23,7 @@ public class TasSysCodeEntity {
     private String createDate;
 
     @Id
-    @Column(name = "CODE_ID", nullable = false, precision = 0)
+    @Column(name = "CODE_ID")
     public long getCodeId() {
         return codeId;
     }
@@ -33,7 +33,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "CODE", nullable = false, length = 50)
+    @Column(name = "CODE")
     public String getCode() {
         return code;
     }
@@ -43,7 +43,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "CODE_MEAN", nullable = false, length = 50)
+    @Column(name = "CODE_MEAN")
     public String getCodeMean() {
         return codeMean;
     }
@@ -53,7 +53,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "TYPE", nullable = false, length = 11)
+    @Column(name = "TYPE")
     public String getType() {
         return type;
     }
@@ -63,7 +63,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "TYPE_MEAN", nullable = false, length = 50)
+    @Column(name = "TYPE_MEAN")
     public String getTypeMean() {
         return typeMean;
     }
@@ -73,7 +73,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "ISBASE", nullable = false, length = 1)
+    @Column(name = "ISBASE")
     public String getIsbase() {
         return isbase;
     }
@@ -83,7 +83,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "STATU", nullable = false, length = 1)
+    @Column(name = "STATU")
     public String getStatu() {
         return statu;
     }
@@ -93,7 +93,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "NOTE", nullable = true, length = 250)
+    @Column(name = "NOTE")
     public String getNote() {
         return note;
     }
@@ -103,7 +103,7 @@ public class TasSysCodeEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }

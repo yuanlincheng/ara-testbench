@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -20,7 +20,7 @@ public class TasLogSystemEntity {
     private String createBy;
 
     @Id
-    @Column(name = "LOG_SYSTEM_ID", nullable = false, precision = 0)
+    @Column(name = "LOG_SYSTEM_ID")
     public long getLogSystemId() {
         return logSystemId;
     }
@@ -30,7 +30,7 @@ public class TasLogSystemEntity {
     }
 
     @Basic
-    @Column(name = "TYPE", nullable = false, length = 15)
+    @Column(name = "TYPE")
     public String getType() {
         return type;
     }
@@ -40,7 +40,7 @@ public class TasLogSystemEntity {
     }
 
     @Basic
-    @Column(name = "OPERATE", nullable = false, length = 20)
+    @Column(name = "OPERATE")
     public String getOperate() {
         return operate;
     }
@@ -50,7 +50,7 @@ public class TasLogSystemEntity {
     }
 
     @Basic
-    @Column(name = "CONTENT", nullable = false, length = 500)
+    @Column(name = "CONTENT")
     public String getContent() {
         return content;
     }
@@ -60,7 +60,7 @@ public class TasLogSystemEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -70,7 +70,7 @@ public class TasLogSystemEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_BY", nullable = false, length = 30)
+    @Column(name = "CREATE_BY")
     public String getCreateBy() {
         return createBy;
     }

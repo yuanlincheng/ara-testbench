@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -20,7 +20,7 @@ public class TasMonServiceStatisticEntity {
     private String createDate;
 
     @Id
-    @Column(name = "MON_SERVICE_ID", nullable = false, precision = 0)
+    @Column(name = "MON_SERVICE_ID")
     public long getMonServiceId() {
         return monServiceId;
     }
@@ -30,7 +30,7 @@ public class TasMonServiceStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_CLUSTER_CODE", nullable = false, length = 50)
+    @Column(name = "ENGINE_CLUSTER_CODE")
     public String getEngineClusterCode() {
         return engineClusterCode;
     }
@@ -40,7 +40,7 @@ public class TasMonServiceStatisticEntity {
     }
 
     @Basic
-    @Column(name = "ENGINE_SERVER_CODE", nullable = false, length = 20)
+    @Column(name = "ENGINE_SERVER_CODE")
     public String getEngineServerCode() {
         return engineServerCode;
     }
@@ -50,7 +50,7 @@ public class TasMonServiceStatisticEntity {
     }
 
     @Basic
-    @Column(name = "SERVICE_KEY", nullable = false, length = 80)
+    @Column(name = "SERVICE_KEY")
     public String getServiceKey() {
         return serviceKey;
     }
@@ -60,7 +60,7 @@ public class TasMonServiceStatisticEntity {
     }
 
     @Basic
-    @Column(name = "TOTAL_VALUE", nullable = false, length = 250)
+    @Column(name = "TOTAL_VALUE")
     public String getTotalValue() {
         return totalValue;
     }
@@ -70,7 +70,7 @@ public class TasMonServiceStatisticEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }

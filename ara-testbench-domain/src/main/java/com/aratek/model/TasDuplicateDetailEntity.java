@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -31,10 +31,9 @@ public class TasDuplicateDetailEntity {
     private String duplicateResultId;
     private String resultFlag;
     private String duplicateResultUuid;
-    private TasDuplicateResultEntity tasDuplicateResultByDuplicateResultUuid;
 
     @Id
-    @Column(name = "DUPLICATE_DETAIL_ID", nullable = false, precision = 0)
+    @Column(name = "DUPLICATE_DETAIL_ID")
     public long getDuplicateDetailId() {
         return duplicateDetailId;
     }
@@ -44,7 +43,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESPONSE_FP_ID", nullable = false, length = 50)
+    @Column(name = "RESPONSE_FP_ID")
     public String getResponseFpId() {
         return responseFpId;
     }
@@ -54,7 +53,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_RANK", nullable = false, precision = 0)
+    @Column(name = "RESULT_RANK")
     public long getResultRank() {
         return resultRank;
     }
@@ -64,7 +63,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "POLICY_CODE", nullable = false, length = 4)
+    @Column(name = "POLICY_CODE")
     public String getPolicyCode() {
         return policyCode;
     }
@@ -74,7 +73,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_TOTAL_SCORE", nullable = true, precision = 2)
+    @Column(name = "RESULT_TOTAL_SCORE")
     public Long getResultTotalScore() {
         return resultTotalScore;
     }
@@ -84,7 +83,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_THUMB_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_THUMB_VER_SCORE")
     public Long getLeftThumbVerScore() {
         return leftThumbVerScore;
     }
@@ -94,7 +93,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_INDEX_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_INDEX_VER_SCORE")
     public Long getLeftIndexVerScore() {
         return leftIndexVerScore;
     }
@@ -104,7 +103,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_MIDDLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_MIDDLE_VER_SCORE")
     public Long getLeftMiddleVerScore() {
         return leftMiddleVerScore;
     }
@@ -114,7 +113,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_RING_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_RING_VER_SCORE")
     public Long getLeftRingVerScore() {
         return leftRingVerScore;
     }
@@ -124,7 +123,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "LEFT_LITTLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "LEFT_LITTLE_VER_SCORE")
     public Long getLeftLittleVerScore() {
         return leftLittleVerScore;
     }
@@ -134,7 +133,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_THUMB_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_THUMB_VER_SCORE")
     public Long getRightThumbVerScore() {
         return rightThumbVerScore;
     }
@@ -144,7 +143,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_INDEX_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_INDEX_VER_SCORE")
     public Long getRightIndexVerScore() {
         return rightIndexVerScore;
     }
@@ -154,7 +153,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_MIDDLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_MIDDLE_VER_SCORE")
     public Long getRightMiddleVerScore() {
         return rightMiddleVerScore;
     }
@@ -164,7 +163,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_RING_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_RING_VER_SCORE")
     public Long getRightRingVerScore() {
         return rightRingVerScore;
     }
@@ -174,7 +173,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RIGHT_LITTLE_VER_SCORE", nullable = true, precision = 2)
+    @Column(name = "RIGHT_LITTLE_VER_SCORE")
     public Long getRightLittleVerScore() {
         return rightLittleVerScore;
     }
@@ -184,7 +183,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -194,7 +193,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "DUPLICATE_RESULT_ID", nullable = true, length = 20)
+    @Column(name = "DUPLICATE_RESULT_ID")
     public String getDuplicateResultId() {
         return duplicateResultId;
     }
@@ -204,7 +203,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "RESULT_FLAG", nullable = false, length = 1)
+    @Column(name = "RESULT_FLAG")
     public String getResultFlag() {
         return resultFlag;
     }
@@ -214,7 +213,7 @@ public class TasDuplicateDetailEntity {
     }
 
     @Basic
-    @Column(name = "DUPLICATE_RESULT_UUID", nullable = false, length = 20)
+    @Column(name = "DUPLICATE_RESULT_UUID")
     public String getDuplicateResultUuid() {
         return duplicateResultUuid;
     }
@@ -288,15 +287,5 @@ public class TasDuplicateDetailEntity {
         result = 31 * result + (resultFlag != null ? resultFlag.hashCode() : 0);
         result = 31 * result + (duplicateResultUuid != null ? duplicateResultUuid.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "DUPLICATE_RESULT_UUID", referencedColumnName = "DUPLICATE_RESULT_UUID", nullable = false)
-    public TasDuplicateResultEntity getTasDuplicateResultByDuplicateResultUuid() {
-        return tasDuplicateResultByDuplicateResultUuid;
-    }
-
-    public void setTasDuplicateResultByDuplicateResultUuid(TasDuplicateResultEntity tasDuplicateResultByDuplicateResultUuid) {
-        this.tasDuplicateResultByDuplicateResultUuid = tasDuplicateResultByDuplicateResultUuid;
     }
 }

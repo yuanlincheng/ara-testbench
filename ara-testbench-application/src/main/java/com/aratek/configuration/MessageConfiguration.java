@@ -1,5 +1,6 @@
 package com.aratek.configuration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -15,6 +16,7 @@ import java.util.Locale;
  * own: Aratek
  */
 @Component
+@Slf4j
 public class MessageConfiguration {
 
     private static Locale locale = LocaleContextHolder.getLocale();

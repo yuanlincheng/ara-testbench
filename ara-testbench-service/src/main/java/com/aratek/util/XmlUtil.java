@@ -1,7 +1,7 @@
 package com.aratek.util;
 
 import com.aratek.exception.InternalServiceException;
-import com.aratek.model.Person;
+import com.aratek.model.TasPersonEntity;
 import com.aratek.model.vo.ResponseWsVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
@@ -28,11 +28,10 @@ public class XmlUtil {
     // 报文解析
     public static ResponseWsVO parseTasXml(String xmlResponse) throws InternalServiceException {
 
-        List<Person> personListTemp = new ArrayList<Person>();
+        List<TasPersonEntity> personListTemp = new ArrayList<>();
 
-        ResponseWsVO crv = null;
+        ResponseWsVO crv = new ResponseWsVO();
         try {
-            crv = new ResponseWsVO();
             // 通过输入的XML数据构造一个Document
             Document doc = DocumentHelper.parseText(xmlResponse);
             // 取的根元素
@@ -91,19 +90,19 @@ public class XmlUtil {
                         Element personCount = 	personInfosList.element("PersonInfos").element("PersonCount");
 
                         if (null != personCount) {
-                            crv.setPersonCount(Integer.parseInt(personCount.getTextTrim()));
+                            crv.setTasPersonEntityCount(Integer.parseInt(personCount.getTextTrim()));
                         }
                         if (null != reqFingerId) {
                             crv.setReqFingerId(reqFingerId.getTextTrim());
                         }
 
                         List<?> personInfolist = personInfosList.element("PersonInfos").element("PersonInfoList").elements();
-                        personListTemp = changePersonList(personInfolist);
+                        personListTemp = changeTasPersonEntityList(personInfolist);
                     }else if(Optional.ofNullable(personInfoList).isPresent()){
                         List<?> personInfolist = personInfoList.elements();
-                        personListTemp = changePersonList(personInfolist);
+                        personListTemp = changeTasPersonEntityList(personInfolist);
                     }
-                    crv.setPersonList(personListTemp);
+                    crv.setTasPersonEntityList(personListTemp);
                 }
             }
             return crv;
@@ -181,20 +180,20 @@ public class XmlUtil {
         return Base64.encodeBase64String(sbData.toString().getBytes());
     }
 
-    public static List<Person> changePersonList(List<?> personElements){
-        List<Person> personListTemp = new ArrayList<Person>();
-        Person personTemp = null;
+    public static List<TasPersonEntity> changeTasPersonEntityList(List<?> personElements){
+        List<TasPersonEntity> personListTemp = new ArrayList<>();
+        TasPersonEntity personTemp;
         for (Iterator<?> personInfos = personElements.iterator(); personInfos.hasNext();) {
             Element personInfo = (Element) personInfos.next();
-            personTemp = new Person();
-            personTemp.setFileId(personInfo.element("FingerId").getTextTrim());
-            personTemp.setEid(personInfo.element("PassportNum").getTextTrim());
+            personTemp = new TasPersonEntity();
+            personTemp.setFpExchageFileId(personInfo.element("FingerId").getTextTrim());
+            personTemp.setPersonEid(personInfo.element("PassportNum").getTextTrim());
             personTemp.setFamilyName(personInfo.element("FamilyName").getTextTrim());
             personTemp.setFirstName(personInfo.element("FirstName").getTextTrim());
             personTemp.setNationCode(personInfo.element("NationCode").getTextTrim());
-            personTemp.setBirthday(personInfo.element("Birthday").getTextTrim());
+            personTemp.setBirthDate(personInfo.element("Birthday").getTextTrim());
             personTemp.setSex(personInfo.element("Gender").getTextTrim());
-            personTemp.setCreateOn(personInfo.element("CreateDate").getTextTrim());
+            personTemp.setCreateDate(personInfo.element("CreateDate").getTextTrim());
             personListTemp.add(personTemp);
         }
         return personListTemp;

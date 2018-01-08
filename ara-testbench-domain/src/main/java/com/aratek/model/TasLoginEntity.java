@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -16,7 +16,7 @@ public class TasLoginEntity {
     private String createDate;
 
     @Id
-    @Column(name = "TOKEN_ID", nullable = false, length = 20)
+    @Column(name = "TOKEN_ID")
     public String getTokenId() {
         return tokenId;
     }
@@ -26,7 +26,7 @@ public class TasLoginEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }

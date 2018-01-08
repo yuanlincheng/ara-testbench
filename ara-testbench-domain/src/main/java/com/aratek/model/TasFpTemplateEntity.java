@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -36,10 +36,9 @@ public class TasFpTemplateEntity {
     private String updateStatu;
     private String createDate;
     private String modifyDate;
-    private TasPersonEntity tasPersonByPersonId;
 
     @Id
-    @Column(name = "PERSON_ID", nullable = false, length = 30)
+    @Column(name = "PERSON_ID")
     public String getPersonId() {
         return personId;
     }
@@ -49,7 +48,7 @@ public class TasFpTemplateEntity {
     }
 
     @Id
-    @Column(name = "FP_INDEX_CODE", nullable = false, length = 2)
+    @Column(name = "FP_INDEX_CODE")
     public String getFpIndexCode() {
         return fpIndexCode;
     }
@@ -59,7 +58,7 @@ public class TasFpTemplateEntity {
     }
 
     @Id
-    @Column(name = "FP_TEMPLATE_NO", nullable = false, length = 2)
+    @Column(name = "FP_TEMPLATE_NO")
     public String getFpTemplateNo() {
         return fpTemplateNo;
     }
@@ -69,7 +68,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_DATASOURCE_CODE", nullable = false, length = 4)
+    @Column(name = "FP_DATASOURCE_CODE")
     public String getFpDatasourceCode() {
         return fpDatasourceCode;
     }
@@ -79,7 +78,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_EXCHANGE_FILE_ID", nullable = true, length = 50)
+    @Column(name = "FP_EXCHANGE_FILE_ID")
     public String getFpExchangeFileId() {
         return fpExchangeFileId;
     }
@@ -89,7 +88,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEMPLATE", nullable = true, length = 4000)
+    @Column(name = "TEMPLATE")
     public String getTemplate() {
         return template;
     }
@@ -99,7 +98,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEMPLATE_B", nullable = true)
+    @Column(name = "TEMPLATE_B")
     public byte[] getTemplateB() {
         return templateB;
     }
@@ -109,7 +108,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "EXT_INFO", nullable = true, length = 2000)
+    @Column(name = "EXT_INFO")
     public String getExtInfo() {
         return extInfo;
     }
@@ -119,7 +118,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_CATEGOTY", nullable = true, length = 30)
+    @Column(name = "FP_CATEGOTY")
     public String getFpCategoty() {
         return fpCategoty;
     }
@@ -129,7 +128,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "SINGULAR_POINT_NUM", nullable = true, precision = 0)
+    @Column(name = "SINGULAR_POINT_NUM")
     public Long getSingularPointNum() {
         return singularPointNum;
     }
@@ -139,7 +138,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "TEMPLATE_POINT_NUM", nullable = true, precision = 0)
+    @Column(name = "TEMPLATE_POINT_NUM")
     public Long getTemplatePointNum() {
         return templatePointNum;
     }
@@ -149,7 +148,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "QUALITY_SCORE", nullable = false, precision = 0)
+    @Column(name = "QUALITY_SCORE")
     public double getQualityScore() {
         return qualityScore;
     }
@@ -159,7 +158,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "ALG_CODE", nullable = false, length = 10)
+    @Column(name = "ALG_CODE")
     public String getAlgCode() {
         return algCode;
     }
@@ -169,7 +168,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "ALG_VERSION", nullable = false, length = 10)
+    @Column(name = "ALG_VERSION")
     public String getAlgVersion() {
         return algVersion;
     }
@@ -179,7 +178,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_BLOCK_INDEX", nullable = false, precision = 0)
+    @Column(name = "FP_BLOCK_INDEX")
     public long getFpBlockIndex() {
         return fpBlockIndex;
     }
@@ -189,7 +188,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "COL_STATU_CODE", nullable = false, length = 1)
+    @Column(name = "COL_STATU_CODE")
     public String getColStatuCode() {
         return colStatuCode;
     }
@@ -199,7 +198,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_DEVICE_CODE", nullable = true, length = 4)
+    @Column(name = "FP_DEVICE_CODE")
     public String getFpDeviceCode() {
         return fpDeviceCode;
     }
@@ -209,7 +208,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "FP_DEVICE_SN", nullable = true, length = 20)
+    @Column(name = "FP_DEVICE_SN")
     public String getFpDeviceSn() {
         return fpDeviceSn;
     }
@@ -219,7 +218,7 @@ public class TasFpTemplateEntity {
     }
 
     @Id
-    @Column(name = "ACTIVE_STATU", nullable = false, length = 1)
+    @Column(name = "ACTIVE_STATU")
     public String getActiveStatu() {
         return activeStatu;
     }
@@ -229,7 +228,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "UPDATE_STATU", nullable = false, length = 1)
+    @Column(name = "UPDATE_STATU")
     public String getUpdateStatu() {
         return updateStatu;
     }
@@ -239,7 +238,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -249,7 +248,7 @@ public class TasFpTemplateEntity {
     }
 
     @Basic
-    @Column(name = "MODIFY_DATE", nullable = true, length = 20)
+    @Column(name = "MODIFY_DATE")
     public String getModifyDate() {
         return modifyDate;
     }
@@ -323,15 +322,5 @@ public class TasFpTemplateEntity {
         result = 31 * result + (createDate != null ? createDate.hashCode() : 0);
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "PERSON_ID", referencedColumnName = "PERSON_ID", nullable = false)
-    public TasPersonEntity getTasPersonByPersonId() {
-        return tasPersonByPersonId;
-    }
-
-    public void setTasPersonByPersonId(TasPersonEntity tasPersonByPersonId) {
-        this.tasPersonByPersonId = tasPersonByPersonId;
     }
 }

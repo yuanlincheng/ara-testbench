@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:15
  * @description: xxx
  * own: Aratek
  */
@@ -22,7 +22,7 @@ public class TasSysPageEntity {
     private String note;
 
     @Id
-    @Column(name = "PAGE_ID", nullable = false, precision = 0)
+    @Column(name = "PAGE_ID")
     public long getPageId() {
         return pageId;
     }
@@ -32,7 +32,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "CODE", nullable = false, length = 30)
+    @Column(name = "CODE")
     public String getCode() {
         return code;
     }
@@ -42,7 +42,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "PCODE", nullable = false, length = 30)
+    @Column(name = "PCODE")
     public String getPcode() {
         return pcode;
     }
@@ -52,7 +52,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "NAME", nullable = false, length = 30)
+    @Column(name = "NAME")
     public String getName() {
         return name;
     }
@@ -62,7 +62,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "OPEN", nullable = false, length = 10)
+    @Column(name = "OPEN")
     public String getOpen() {
         return open;
     }
@@ -72,7 +72,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "URL", nullable = false, length = 100)
+    @Column(name = "URL")
     public String getUrl() {
         return url;
     }
@@ -82,7 +82,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "STATU", nullable = false, length = 1)
+    @Column(name = "STATU")
     public String getStatu() {
         return statu;
     }
@@ -92,7 +92,7 @@ public class TasSysPageEntity {
     }
 
     @Basic
-    @Column(name = "NOTE", nullable = true, length = 250)
+    @Column(name = "NOTE")
     public String getNote() {
         return note;
     }

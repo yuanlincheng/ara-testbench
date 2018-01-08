@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -19,7 +19,7 @@ public class TasImportImgEntity {
     private String imgReadFlag;
 
     @Id
-    @Column(name = "IMG_FINGER_ID_POSITION", nullable = false, length = 35)
+    @Column(name = "IMG_FINGER_ID_POSITION")
     public String getImgFingerIdPosition() {
         return imgFingerIdPosition;
     }
@@ -29,7 +29,7 @@ public class TasImportImgEntity {
     }
 
     @Basic
-    @Column(name = "IMG_DATA", nullable = true)
+    @Column(name = "IMG_DATA")
     public byte[] getImgData() {
         return imgData;
     }
@@ -39,7 +39,7 @@ public class TasImportImgEntity {
     }
 
     @Basic
-    @Column(name = "IMG_CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "IMG_CREATE_DATE")
     public String getImgCreateDate() {
         return imgCreateDate;
     }
@@ -49,7 +49,7 @@ public class TasImportImgEntity {
     }
 
     @Basic
-    @Column(name = "IMG_READ_FLAG", nullable = false, length = 4)
+    @Column(name = "IMG_READ_FLAG")
     public String getImgReadFlag() {
         return imgReadFlag;
     }

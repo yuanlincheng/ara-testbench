@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author: tree
  * @version: 1.0
- * date: 2018/1/6 0:08
+ * date: 2018/1/7 13:14
  * @description: xxx
  * own: Aratek
  */
@@ -23,10 +23,9 @@ public class TasSysManagerEntity {
     private String createBy;
     private String modifyDate;
     private String modifyBy;
-    private TasSysRoleEntity tasSysRoleByRoleId;
 
     @Id
-    @Column(name = "MANAGER_ID", nullable = false, precision = 0)
+    @Column(name = "MANAGER_ID")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="trustafis_seq")
     @SequenceGenerator(name="trustafis_seq", sequenceName="SEQ_TAS_FPIMAGE_DETAIL")
     public long getManagerId() {
@@ -38,7 +37,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "ACCOUNT", nullable = false, length = 30)
+    @Column(name = "ACCOUNT")
     public String getAccount() {
         return account;
     }
@@ -48,7 +47,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "PASSWORD", nullable = false, length = 100)
+    @Column(name = "PASSWORD")
     public String getPassword() {
         return password;
     }
@@ -58,7 +57,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "ROLE_ID", nullable = false, precision = 0)
+    @Column(name = "ROLE_ID")
     public long getRoleId() {
         return roleId;
     }
@@ -68,7 +67,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "IS_ROOT", nullable = false, length = 1)
+    @Column(name = "IS_ROOT")
     public String getIsRoot() {
         return isRoot;
     }
@@ -78,7 +77,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "STATU", nullable = false, length = 1)
+    @Column(name = "STATU")
     public String getStatu() {
         return statu;
     }
@@ -88,7 +87,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "LAST_LOGIN", nullable = true, length = 20)
+    @Column(name = "LAST_LOGIN")
     public String getLastLogin() {
         return lastLogin;
     }
@@ -98,7 +97,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_DATE", nullable = false, length = 20)
+    @Column(name = "CREATE_DATE")
     public String getCreateDate() {
         return createDate;
     }
@@ -108,7 +107,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "CREATE_BY", nullable = true, length = 30)
+    @Column(name = "CREATE_BY")
     public String getCreateBy() {
         return createBy;
     }
@@ -118,7 +117,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "MODIFY_DATE", nullable = true, length = 20)
+    @Column(name = "MODIFY_DATE")
     public String getModifyDate() {
         return modifyDate;
     }
@@ -128,7 +127,7 @@ public class TasSysManagerEntity {
     }
 
     @Basic
-    @Column(name = "MODIFY_BY", nullable = true, length = 30)
+    @Column(name = "MODIFY_BY")
     public String getModifyBy() {
         return modifyBy;
     }
@@ -173,15 +172,5 @@ public class TasSysManagerEntity {
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         result = 31 * result + (modifyBy != null ? modifyBy.hashCode() : 0);
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "ROLE_ID", referencedColumnName = "ROLE_ID", nullable = false)
-    public TasSysRoleEntity getTasSysRoleByRoleId() {
-        return tasSysRoleByRoleId;
-    }
-
-    public void setTasSysRoleByRoleId(TasSysRoleEntity tasSysRoleByRoleId) {
-        this.tasSysRoleByRoleId = tasSysRoleByRoleId;
     }
 }

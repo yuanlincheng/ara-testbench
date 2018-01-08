@@ -1,7 +1,6 @@
 package com.aratek.configuration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,9 +17,8 @@ import java.io.IOException;
  * own: Aratek
  */
 @Configuration
+@Slf4j
 public class WebFilterConfiguration {
-
-    private static Logger log = LoggerFactory.getLogger(WebFilterConfiguration.class);
 
     @Bean
     public FilterRegistrationBean testFilterRegistration() {
