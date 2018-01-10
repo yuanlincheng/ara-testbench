@@ -11,7 +11,7 @@
         <property name="v$session.program" value="DataGrip" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="b7fdb746-d611-49f6-9ca6-56cb4b6b757c">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="d4da2e57-c1ba-4abe-b781-ad800d0865e7">
       <driver-ref>oracle</driver-ref>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/ara-testbench-domain/src/main/resources/hibernate.cfg.xml</remarks>

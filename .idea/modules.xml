@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ara-testbench.iml" filepath="$PROJECT_DIR$/ara-testbench.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ara-testbench.iml" filepath="$PROJECT_DIR$/.idea/ara-testbench.iml" />
       <module fileurl="file://$PROJECT_DIR$/ara-testbench-application/ara-testbench-application.iml" filepath="$PROJECT_DIR$/ara-testbench-application/ara-testbench-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/ara-testbench-dao/ara-testbench-dao.iml" filepath="$PROJECT_DIR$/ara-testbench-dao/ara-testbench-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/ara-testbench-domain/ara-testbench-domain.iml" filepath="$PROJECT_DIR$/ara-testbench-domain/ara-testbench-domain.iml" />

@@ -27,6 +27,9 @@ public class TasSysManagerServiceImplTest {
 
     @Test
     public void findAll() throws Exception {
+        tasSysManagerService.findAll().stream().forEach( x ->{
+            log.info(x.getAccount());
+        });
         Assert.assertNotNull(tasSysManagerService.findAll());
     }
 

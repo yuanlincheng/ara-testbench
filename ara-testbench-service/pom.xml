@@ -18,11 +18,6 @@
             <artifactId>ara-testbench-dao</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.aratek</groupId>
-            <artifactId>ara-testbench-domain</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <!--启用spring boot devtools 热部署组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
