@@ -1,7 +1,7 @@
 package com.aratek.util;
 
 import com.aratek.exception.InternalServiceException;
-import com.aratek.model.TasPersonEntity;
+import com.aratek.model.TasPerson;
 import com.aratek.model.vo.ResponseWsVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
@@ -28,7 +28,7 @@ public class XmlUtil {
     // 报文解析
     public static ResponseWsVO parseTasXml(String xmlResponse) throws InternalServiceException {
 
-        List<TasPersonEntity> personListTemp = new ArrayList<>();
+        List<TasPerson> personListTemp = new ArrayList<>();
 
         ResponseWsVO crv = new ResponseWsVO();
         try {
@@ -90,19 +90,19 @@ public class XmlUtil {
                         Element personCount = 	personInfosList.element("PersonInfos").element("PersonCount");
 
                         if (null != personCount) {
-                            crv.setTasPersonEntityCount(Integer.parseInt(personCount.getTextTrim()));
+                            crv.setTasPersonCount(Integer.parseInt(personCount.getTextTrim()));
                         }
                         if (null != reqFingerId) {
                             crv.setReqFingerId(reqFingerId.getTextTrim());
                         }
 
                         List<?> personInfolist = personInfosList.element("PersonInfos").element("PersonInfoList").elements();
-                        personListTemp = changeTasPersonEntityList(personInfolist);
+                        personListTemp = changeTasPersonList(personInfolist);
                     }else if(Optional.ofNullable(personInfoList).isPresent()){
                         List<?> personInfolist = personInfoList.elements();
-                        personListTemp = changeTasPersonEntityList(personInfolist);
+                        personListTemp = changeTasPersonList(personInfolist);
                     }
-                    crv.setTasPersonEntityList(personListTemp);
+                    crv.setTasPersonList(personListTemp);
                 }
             }
             return crv;
@@ -180,12 +180,12 @@ public class XmlUtil {
         return Base64.encodeBase64String(sbData.toString().getBytes());
     }
 
-    public static List<TasPersonEntity> changeTasPersonEntityList(List<?> personElements){
-        List<TasPersonEntity> personListTemp = new ArrayList<>();
-        TasPersonEntity personTemp;
+    public static List<TasPerson> changeTasPersonList(List<?> personElements){
+        List<TasPerson> personListTemp = new ArrayList<>();
+        TasPerson personTemp;
         for (Iterator<?> personInfos = personElements.iterator(); personInfos.hasNext();) {
             Element personInfo = (Element) personInfos.next();
-            personTemp = new TasPersonEntity();
+            personTemp = new TasPerson();
             personTemp.setFpExchageFileId(personInfo.element("FingerId").getTextTrim());
             personTemp.setPersonEid(personInfo.element("PassportNum").getTextTrim());
             personTemp.setFamilyName(personInfo.element("FamilyName").getTextTrim());

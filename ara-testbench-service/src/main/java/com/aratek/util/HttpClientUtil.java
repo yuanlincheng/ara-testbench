@@ -8,7 +8,7 @@
 package com.aratek.util;
 
 import com.aratek.exception.InternalServiceException;
-import com.aratek.model.TasPersonEntity;
+import com.aratek.model.TasPerson;
 import com.aratek.model.vo.ResponseWsVO;
 import com.util.CommonStringUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -299,7 +299,7 @@ public class HttpClientUtil {
      * @return ResponseWsVO 响应对象
      * @throws InternalServiceException
      */
-    public  ResponseWsVO wsAfisUpdatePerson(String sessionId, TasPersonEntity person) throws InternalServiceException {
+    public  ResponseWsVO wsAfisUpdatePerson(String sessionId, TasPerson person) throws InternalServiceException {
         log.info("[SYS_LOG][wsAfisUpdatePerson][{}][{}]",sessionId,person.toString());
         //添加报文数据
         MAP_DATA.put(dataTag[2], sessionId);

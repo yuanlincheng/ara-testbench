@@ -1,22 +1,24 @@
+/**
+ * author: tree
+ * version: 1.0
+ * date: 2018/01/12
+ * description:
+ * own: Aratek
+ */
+
 package com.aratek.service.impl;
 
-import com.aratek.ServiceApplication;
-import com.aratek.service.TasSysManagerService;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import lombok.extern.slf4j.Slf4j;
 
-/**
- * @author: tree
- * @version: 1.0
- * date: 2018/1/6 21:31
- * @description: xxx
- * own: Aratek
- */
+import com.aratek.ServiceApplication;
+import com.aratek.service.TasSysManagerService;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ServiceApplication.class)
 @Slf4j
@@ -26,11 +28,36 @@ public class TasSysManagerServiceImplTest {
     private TasSysManagerService tasSysManagerService;
 
     @Test
-    public void findAll() throws Exception {
+    public void save()throws Exception{
+
+    }
+
+    @Test
+    public void update()throws Exception{
+
+    }
+
+    @Test
+    public void delete()throws Exception{
+
+    }
+
+    @Test
+    public void findAll()throws Exception{
         tasSysManagerService.findAll().stream().forEach( x ->{
             log.info(x.getAccount());
         });
         Assert.assertNotNull(tasSysManagerService.findAll());
     }
 
+    @Test
+    public void findOne()throws Exception{
+//        Long id =
+//        Assert.assertNotNull(tasSysManagerService.findOne(id));
+    }
+
+    @Test
+    public void findByParam()throws Exception{
+
+    }
 }

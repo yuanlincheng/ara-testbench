@@ -12,7 +12,7 @@
 package com.aratek.model.vo;
 
 
-import com.aratek.model.TasPersonEntity;
+import com.aratek.model.TasPerson;
 
 import java.util.List;
 
@@ -26,11 +26,11 @@ public class ResponseWsVO {
 	private String receiptId;
 	private String Cipher;
 	private String reqFingerId;
-	private int tasPersonEntityCount;
+	private int tasPersonCount;
 	private String fpPackage;
 	private String signData;
 	private String certData;
-	private List<TasPersonEntity> tasPersonEntityList;
+	private List<TasPerson> tasPersonList;
 	private String fingerData;
 
     public ResponseWsVO() {
@@ -68,8 +68,8 @@ public class ResponseWsVO {
         return this.reqFingerId;
     }
 
-    public int getTasPersonEntityCount() {
-        return this.tasPersonEntityCount;
+    public int getTasPersonCount() {
+        return this.tasPersonCount;
     }
 
     public String getFpPackage() {
@@ -84,8 +84,8 @@ public class ResponseWsVO {
         return this.certData;
     }
 
-    public List<TasPersonEntity> getTasPersonEntityList() {
-        return this.tasPersonEntityList;
+    public List<TasPerson> getTasPersonList() {
+        return this.tasPersonList;
     }
 
     public String getFingerData() {
@@ -124,8 +124,8 @@ public class ResponseWsVO {
         this.reqFingerId = reqFingerId;
     }
 
-    public void setTasPersonEntityCount(int tasPersonEntityCount) {
-        this.tasPersonEntityCount = tasPersonEntityCount;
+    public void setTasPersonCount(int tasPersonCount) {
+        this.tasPersonCount = tasPersonCount;
     }
 
     public void setFpPackage(String fpPackage) {
@@ -140,8 +140,8 @@ public class ResponseWsVO {
         this.certData = certData;
     }
 
-    public void setTasPersonEntityList(List<TasPersonEntity> tasPersonEntityList) {
-        this.tasPersonEntityList = tasPersonEntityList;
+    public void setTasPersonList(List<TasPerson> tasPersonList) {
+        this.tasPersonList = tasPersonList;
     }
 
     public void setFingerData(String fingerData) {
@@ -177,7 +177,7 @@ public class ResponseWsVO {
         final Object other$reqFingerId = other.getReqFingerId();
         if (this$reqFingerId == null ? other$reqFingerId != null : !this$reqFingerId.equals(other$reqFingerId))
             return false;
-        if (this.getTasPersonEntityCount() != other.getTasPersonEntityCount()) return false;
+        if (this.getTasPersonCount() != other.getTasPersonCount()) return false;
         final Object this$fpPackage = this.getFpPackage();
         final Object other$fpPackage = other.getFpPackage();
         if (this$fpPackage == null ? other$fpPackage != null : !this$fpPackage.equals(other$fpPackage)) return false;
@@ -187,9 +187,9 @@ public class ResponseWsVO {
         final Object this$certData = this.getCertData();
         final Object other$certData = other.getCertData();
         if (this$certData == null ? other$certData != null : !this$certData.equals(other$certData)) return false;
-        final Object this$tasPersonEntityList = this.getTasPersonEntityList();
-        final Object other$tasPersonEntityList = other.getTasPersonEntityList();
-        if (this$tasPersonEntityList == null ? other$tasPersonEntityList != null : !this$tasPersonEntityList.equals(other$tasPersonEntityList))
+        final Object this$tasPersonList = this.getTasPersonList();
+        final Object other$tasPersonList = other.getTasPersonList();
+        if (this$tasPersonList == null ? other$tasPersonList != null : !this$tasPersonList.equals(other$tasPersonList))
             return false;
         final Object this$fingerData = this.getFingerData();
         final Object other$fingerData = other.getFingerData();
@@ -216,15 +216,15 @@ public class ResponseWsVO {
         result = result * PRIME + ($Cipher == null ? 43 : $Cipher.hashCode());
         final Object $reqFingerId = this.getReqFingerId();
         result = result * PRIME + ($reqFingerId == null ? 43 : $reqFingerId.hashCode());
-        result = result * PRIME + this.getTasPersonEntityCount();
+        result = result * PRIME + this.getTasPersonCount();
         final Object $fpPackage = this.getFpPackage();
         result = result * PRIME + ($fpPackage == null ? 43 : $fpPackage.hashCode());
         final Object $signData = this.getSignData();
         result = result * PRIME + ($signData == null ? 43 : $signData.hashCode());
         final Object $certData = this.getCertData();
         result = result * PRIME + ($certData == null ? 43 : $certData.hashCode());
-        final Object $tasPersonEntityList = this.getTasPersonEntityList();
-        result = result * PRIME + ($tasPersonEntityList == null ? 43 : $tasPersonEntityList.hashCode());
+        final Object $tasPersonList = this.getTasPersonList();
+        result = result * PRIME + ($tasPersonList == null ? 43 : $tasPersonList.hashCode());
         final Object $fingerData = this.getFingerData();
         result = result * PRIME + ($fingerData == null ? 43 : $fingerData.hashCode());
         return result;
@@ -235,6 +235,6 @@ public class ResponseWsVO {
     }
 
     public String toString() {
-        return "ResponseWsVO(resultCode=" + this.getResultCode() + ", resultMsg=" + this.getResultMsg() + ", sessionId=" + this.getSessionId() + ", dataFlag=" + this.getDataFlag() + ", dataVersion=" + this.getDataVersion() + ", receiptId=" + this.getReceiptId() + ", Cipher=" + this.getCipher() + ", reqFingerId=" + this.getReqFingerId() + ", tasPersonEntityCount=" + this.getTasPersonEntityCount() + ", fpPackage=" + this.getFpPackage() + ", signData=" + this.getSignData() + ", certData=" + this.getCertData() + ", tasPersonEntityList=" + this.getTasPersonEntityList() + ", fingerData=" + this.getFingerData() + ")";
+        return "ResponseWsVO(resultCode=" + this.getResultCode() + ", resultMsg=" + this.getResultMsg() + ", sessionId=" + this.getSessionId() + ", dataFlag=" + this.getDataFlag() + ", dataVersion=" + this.getDataVersion() + ", receiptId=" + this.getReceiptId() + ", Cipher=" + this.getCipher() + ", reqFingerId=" + this.getReqFingerId() + ", tasPersonCount=" + this.getTasPersonCount() + ", fpPackage=" + this.getFpPackage() + ", signData=" + this.getSignData() + ", certData=" + this.getCertData() + ", tasPersonList=" + this.getTasPersonList() + ", fingerData=" + this.getFingerData() + ")";
     }
 }

@@ -12,6 +12,13 @@
 
     <artifactId>ara-testbench-domain</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+    </dependencies>
+
     <!--解决spring boot多模块项目，maven打包，依赖包找不到对象的问题-->
     <build>
         <plugins>
